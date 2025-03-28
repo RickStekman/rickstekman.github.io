@@ -1,0 +1,631 @@
+/* Resetting some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Applying the Poppins font */
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  /*padding-top: 80px;*/
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 0px; /* Ajusta esto si es necesario según la altura del header */
+  }
+}
+
+/* Estilos generales del header */
+header {
+  background: gray;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem; /* Ajusta el padding si es necesario */
+  }
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Logos */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar .logo img {
+  height: 80px; /* Tamaño normal */
+}
+
+/* Menú de navegación */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.8rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+  display: none; /* Oculto en pantallas grandes */
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 2000;
+}
+
+/* 📱 Estilos para móviles (máx. 768px) */
+@media (max-width: 768px) {
+  /* Ajustar tamaño de los logos */
+  .navbar .logo img {
+    height: 50px; /* Más pequeño en móvil */
+  }
+
+  /* Mostrar el botón hamburguesa */
+  .menu-toggle {
+    display: block;
+    padding-top: 10px;
+  }
+
+  /* Ocultar menú normal y hacerlo tipo dropdown */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 1rem 0;
+  }
+}
+
+
+
+/* Hero Section Styles */
+#hero {
+  background-image: url("../Image/pexels-heibbymarvel-5224742.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh; /* Esto hace que la sección ocupe toda la altura de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra el contenido vertical y horizontalmente */
+  text-align: center;
+  color: white; /* Color de texto blanco para mayor visibilidad */
+  padding-top: 0; /* Quita el padding superior que tenías */
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 90px; /* Ajusta esto para que no quede un espacio innecesario */
+  }
+}
+
+
+/* Estilos para los textos dentro del hero */
+#hero h2 {
+  font-size: 4vw;  /* Toma el 6% del ancho de la ventana */
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+#hero p {
+  font-size: 1.5vw; /* Toma el 2.5% del ancho de la ventana */
+  margin-bottom: 1.5rem;
+}
+
+/* Animación de entrada suave */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px); /* Desplazamiento hacia abajo al inicio */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* Botón de llamada a la acción */
+.cta-btn {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #003366;
+  transform: scale(1.1);
+}
+
+/* Responsive Design para Hero */
+@media (max-width: 768px) {
+  #hero {
+    height: calc(100vh - 80px);
+    padding-top: 80px;
+  }
+  #hero h2 {
+    font-size: 3rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+  }
+
+  #hero p {
+    font-size: 1.2rem; /* Reducir tamaño del texto en pantallas pequeñas */
+  }
+
+  .cta-btn {
+    padding: 0.8rem 1.5rem; /* Reducir el tamaño del botón en pantallas pequeñas */
+  }
+}
+
+/* Estilos para los íconos de redes sociales */
+#Social {
+  list-style: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#Social a {
+  color: white;
+  font-size: 2rem; /* Si usas imágenes, ajusta el tamaño aquí */
+  display: inline-block; /* Asegura que no se convierta en un bloque */
+  padding: 0; /* Elimina el padding para evitar el espacio extra alrededor del icono */
+  background-color: transparent; /* Fondo transparente para evitar el contorno */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave para transformaciones y brillo */
+}
+
+#Social a:hover {
+  color: #dbe260; /* Color de hover */
+  transform: scale(1.1); /* Efecto de agrandar */
+  filter: brightness(1.2); /* Aumenta el brillo del icono al hacer hover */
+}
+
+/* Para asegurar que las imágenes se adapten bien */
+#Social a img {
+  width: 40px; /* Ajusta el tamaño según el diseño */
+  height: 40px; /* Ajusta el tamaño según el diseño */
+  display: block; /* Asegura que la imagen se comporta como un bloque, eliminando posibles márgenes */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transición de imágenes */
+}
+
+#Social a:hover img {
+  transform: scale(1.1); /* Agranda la imagen */
+  filter: brightness(1.2); /* Hace la imagen un poco más brillante */
+}
+
+/* Estilo del botón flotante */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;  /* Distancia desde el fondo */
+  right: 20px;   /* Distancia desde la derecha */
+  width: 60px;   /* Ancho del botón */
+  height: 60px;  /* Altura del botón */
+  background-color: transparent; /* Fondo transparente */
+  border-radius: 50%;  /* Botón redondeado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+  z-index: 9999; /* Para que siempre esté encima del contenido */
+}
+
+.floating-btn img {
+  width: 100%; /* Hacer que la imagen ocupe todo el espacio del botón */
+  height: 100%;
+  border-radius: 50%; /* Para que la imagen también sea redonda */
+}
+
+.floating-btn:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+
+/* Info Section Styles */
+.info-section {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+
+.info-section .container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+/* About Section Styles */
+#about {
+  height: 100vh; /* La sección ocupa toda la altura de la pantalla */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  text-align: center;
+  background-color: #ffffff; /* Color de fondo blanco */
+  padding: 0 20px; /* Agrega un pequeño margen de los lados */
+}
+
+#about .container {
+  width: 80%; /* Asegura que el contenedor no ocupe todo el ancho */
+}
+
+#about h2 {
+  font-size: 1.5vw; /* Toma el 3% del ancho de la ventana para el título */
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#about p {
+  font-size: 2vw; /* Toma el 2% del ancho de la ventana para el párrafo */
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px; /* Limita el tamaño del párrafo */
+  margin: 0 auto;
+}
+
+/* Responsive Design para la sección About */
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 2.5rem; /* Reducir tamaño de fuente del título en pantallas pequeñas */
+  }
+
+  #about p {
+    font-size: 1.2rem; /* Reducir tamaño del párrafo en pantallas pequeñas */
+  }
+}
+
+
+
+
+/* Service Cards Styles */
+#services {
+  border-top: 3px solid #dbe260;
+}
+
+.info-section {
+  background-color: #333;
+  color: white;
+  padding: 50px 0;
+}
+.service-cards {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /*esto lo saque de un tuto*/
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 30%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+
+
+/* carousel */
+/* Ajuste del contenedor del fondo de la imagen */
+#moving-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajusta la altura de la imagen */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+  margin-bottom: 0px; /* Elimina el margen inferior */
+}
+
+/* Definir el fondo y la animación */
+.moving-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%; /* Asegura que haya suficiente espacio para el efecto de repetición */
+  height: 100%;
+  background-image: url("../Image/carousel\ v2-01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  animation: moveImage 50s linear infinite; /* Aumenta el tiempo de la animación para que sea más lenta */
+}
+
+/* Animación para mover la imagen de izquierda a derecha */
+@keyframes moveImage {
+  0% {
+    left: 0%; /* Empieza desde el borde izquierdo */
+  }
+  100% {
+    left: -100%; /* Termina en el 100% hacia la izquierda */
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  #moving-image-container {
+    height: 500px; /* Ajusta la altura en pantallas grandes */
+  }
+
+  .moving-image {
+    background-size: contain; /* Ajusta el tamaño de la imagen para que no se recorte */
+    width: 400%; /* Asegura que la imagen tenga suficiente espacio para moverse */
+  }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  #moving-image-container {
+    height: 200px; /* Ajusta la altura en pantallas más pequeñas si es necesario */
+  }
+
+  .moving-image {
+    width: 600%; /* Aumenta el tamaño para que haya más espacio para la animación */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    animation: moveImage 15s linear infinite;
+  }
+}
+
+@media (max-width: 480px) {
+  #moving-image-container {
+    height: 150px; /* Ajusta aún más la altura para pantallas muy pequeñas */
+  }
+
+  .moving-image {
+    width: 800%; /* Aumenta el tamaño aún más para pantallas pequeñas */
+    animation: moveImage 20s linear infinite; /* Aumenta la velocidad aún más para pantallas muy pequeñas */
+  }
+}
+
+
+
+/* Sección de testimonios */
+#testimonials {
+  margin-top: 0px; /* Elimina el margen superior para reducir el espacio */
+  border-top: 3px solid #dbe260;
+  background-color: #333;
+}
+
+/* Elimina márgenes o rellenos no deseados en la sección testimonial */
+.testimonial-cards {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.testimonials-section {
+  background-color: #ffffff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.testimonial-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px); /* Inicialmente está debajo y transparente */
+}
+
+.testimonial-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+
+/* Contact Section Styles */
+#contact {
+  border-top: 3px solid #dbe260;
+}
+.contact-section {
+  background-color: #6dbccb;
+  color: white;
+  padding: 50px 0;
+}
+
+.contact-section .container {
+  text-align: center;
+}
+
+.contact-section form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-section form input:focus,
+.contact-section form textarea:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.contact-section form button {
+  background: #0056b3;
+  color: white;
+  padding: 14px 24px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-section form button:hover {
+  background: #003366;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-cards,
+  .testimonial-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .service-card,
+  .testimonial-card {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+
+  .cta-btn {
+      padding: 0.8rem 2rem;
+  }
+
+  .contact-section form input,
+  .contact-section form textarea {
+      width: 90%;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
