@@ -97,10 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("nav-links");
 
   menuToggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
+      navLinks.classList.toggle("active");
   });
 });
-
 
 
 // Función para activar la animación cuando el elemento está en pantalla
@@ -121,4 +120,32 @@ window.addEventListener('scroll', handleScroll);
 // Llamar la función de inmediato para verificar si ya está visible al cargar la página
 handleScroll();
 
+// about animacion
 
+function openCompanyTab(evt, companyId) {
+  // Ocultar todos los contenidos de Company Tabs
+  const companyContents = document.querySelectorAll('.tab-content.company');
+  companyContents.forEach(content => content.classList.remove('active'));
+
+  // Desactivar todas las pestañas de Company Tabs
+  const companyTabs = document.querySelectorAll('.company-tabs .tab-button');
+  companyTabs.forEach(tab => tab.classList.remove('active'));
+
+  // Activar la pestaña seleccionada
+  document.getElementById(companyId).classList.add('active');
+  evt.currentTarget.classList.add('active');
+}
+
+function openTab(evt, tabId) {
+  // Ocultar todos los contenidos de Tabs
+  const tabContents = document.querySelectorAll('.tab-content.tabs');
+  tabContents.forEach(content => content.classList.remove('active'));
+
+  // Desactivar todas las pestañas de Tabs
+  const tabs = document.querySelectorAll('.tabs .tab-button');
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  // Activar la pestaña seleccionada
+  document.getElementById(tabId).classList.add('active');
+  evt.currentTarget.classList.add('active');
+}
