@@ -570,9 +570,17 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
+  
   .about-companies {
-    flex-direction: column;
-    gap: 10px;
+    display: flex; /* Ya está definido, pero asegúrate */
+    flex-direction: column; /* Coloca las tarjetas en una sola columna */
+    align-items: center; /* Centra horizontalmente las tarjetas */
+    gap: 20px; /* Añade espacio entre las tarjetas */
+  }
+  .company-card {
+    width: 90%; /* Cambia el ancho a un porcentaje para adaptarse a la pantalla */
+    max-width: 300px; /* Máximo permitido para evitar que crezca demasiado */
+    margin: 0 auto; /* Centra automáticamente */
   }
 
   .company-logo {
@@ -626,13 +634,13 @@ nav ul li a:hover {
 #three .major h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #f1c40f; /* Destaca el título con un color vibrante */
 }
 
 #three .major p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  line-height: 1.8;
+  font-size: 1.5rem;
+  line-height: 1;
   margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.8); /* Texto más suave */
   max-width: 800px;
@@ -671,8 +679,8 @@ header.major {
 /* Contenedor de la grilla */
 #three .box.alt .row {
   display: grid; /* Cambiamos de flexbox a grid */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Máximo de 3 columnas */
-  gap: 20px; /* Espaciado entre elementos */
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Máximo de 3 columnas */
+  gap: 10px; /* Espaciado entre elementos */
   justify-content: center; /* Centra el contenido horizontalmente */
 }
 
@@ -680,11 +688,12 @@ header.major {
 #three .box.alt section {
   background: transparent; /* Fondo semitransparente */
   border-radius: 15px; /* Bordes redondeados */
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   /* width: 300px; /* Tamaño uniforme */
   width: 100%; /* Ajusta el ancho en móvil */
   max-width: 300px; /* Limita el ancho máximo */
+  max-height: 600px;
   margin: 0 auto; /* Centra cada contenedor */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -770,7 +779,7 @@ header.major:after {
 
 /* Texto descriptivo */
 #three .box.alt section p {
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.8); /* Texto más claro para contraste */
   line-height: 1.6;
 }
@@ -949,6 +958,7 @@ header.major:after {
 #testimonials h2 {
   color: white;
   text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 
 }
 
