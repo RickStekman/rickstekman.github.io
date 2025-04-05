@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
     <script
       src="https://kit.fontawesome.com/f788f9dce1.js"
       crossorigin="anonymous"
@@ -32,7 +33,8 @@
         <nav>
           <ul id="nav-links">
             <li><a href="#about">¿Quiénes somos?</a></li>
-            <li><a href="#services">Servicios</a></li>
+            <li><a href="#three">Servicios</a></li>
+            <li><a href="#treen">Tren Ejecutivo</a></li>
             <li><a href="#testimonials">Testimonios</a></li>
             <li><a href="#contact">Contáctanos</a></li>
           </ul>      
@@ -44,11 +46,20 @@
     </header>    
 
     <section id="hero">
+      <!-- Contenedor para el slider de fondo -->
+      <div class="bg-slider">
+        <div class="slide" style="background-image: url('./Image/pexels-heibbymarvel-5224742.jpg');"></div>
+        <div class="slide" style="background-image: url('./Image/pexels-pixabay-262353.jpg');"></div>
+        <div class="slide" style="background-image: url('./Image/place-flying-sunset-sky.jpg');"></div>
+        <!-- Para añadir más imágenes, agrega más div con class="slide" y la imagen deseada -->
+      </div>
+
+      <!-- Contenido principal del hero -->
       <div class="hero-content">
-        <h2>Importación y Exporta a NIVEL GLOBAL</h2>
-        <p>Agentes aduanales, <strong>SOMOS TU MEJOR OPCIÓN</strong>.</p>
+        <h2>Operador logístico integral</h2>
+        <p>Diseñamos tu logistica, <strong>CONSTRUIMOS SOLUCIONES</strong>.</p>
         <a href="#contact" class="cta-btn">Contáctanos</a>
-        <ul id="Social">
+        <!-- <ul id="Social">
           <li>
             <a href="https://instagram.com/multiservicios_svl/" target="_blank">
               <img src="./Image/INSTAGRAM trans-01-01.png" alt="Instagram" height="30" />
@@ -59,60 +70,77 @@
               <img src="./Image/facebook trans-01.png" alt="Facebook" height="30" />
             </a>
           </li>
-        </ul>        
+        </ul>  -->      
       </div>
     </section>
-    
-    <section id="about" class="info-section fade-in">
-      <div class="about-header">
-        <h1>Acerca de Nosotros</h1>
-        <p>Nos especializadas en servicios logísticos multimodales,
-          incluyendo manejo de carga nacional e internacional, agenciamiento aduanal,
-          almacenaje y transporte terrestre.</p>
-      </div>
-    
-      <div class="about-companies">
-        <div class="company-card">
-          <img src="./Image/LOGO_SVL v2.png" alt="Logo SVL" class="company-logo">
-          <!-- <h2>Multiservicios Logísticos S.V.L.</h2> -->
-          <p>
-            Funciona como Operador Logístico, con empresas aliadas en la prestación
-            de servicios por las Aduanas (La Guaira, Maiquetía, Paraguachon y San
-            Antonio del Táchira)
-          </p>
-        </div>
-        <div class="company-card">
-          <img src="./Image/servicustoms v2.png" alt="Logo SERVICUSTOMS" class="company-logo">
-          <!-- <h2>SERVICUSTOMS AGENCY</h2> -->
-          <p>Somos agentes aduanales expertos en la Aduana Marítima de Puerto Cabello.</p>
-        </div>
-      </div>
-      <div class="about-details">
-        <div class="detail">
-          <h3>Misión</h3>
-          <p>
-            Nos enfocamos en satisfacer las necesidades logísticas de importación, exportación
-            y transporte terrestre, ofreciendo tecnología innovadora, talento altamente calificado
-            y prácticas eficientes que garantizan seguridad, calidad y sostenibilidad.</p>
-        </div>
-        <div class="detail">
-          <h3>Visión</h3>
-          <p>
-            Ser la empresa prestadora de servicios de soporte logístico de aduanas especializado
-            para brindar procesos eficientes y eficaces.
-          </p>
-        </div>
-        <div class="detail">
-          <h3>Objetivos</h3>
-          <p>
-            Ofrecemos soluciones logísticas especializadas, garantizando gestión integral,
-            estándares eficientes y sincronización con los sistemas de nuestros clientes para
-            ser aliados estratégicos y fortalecer sus cadenas operativas.</p>
-        </div>
-      </div>
-    </section> 
 
-    <section id="three" class="wrapper style1 special fade-up" class="info-section fade-in">
+    <section id="about" class="s-about target-section">
+
+      <div class="row section-header has-bottom-sep">
+        <div class="column lg-12">
+          <h3 class="text-pretitle">¿Quiénes somos?</h3>
+          <h1 class="text-display-title">
+            En el grupo SVL nos especializamos en servicios logísticos multimodales,
+            incluyendo manejo de carga nacional e internacional, agenciamiento aduanal,
+            almacenaje y transporte terrestre. Y nos dividimos en dos empresas.
+          </h1>
+        </div>
+      </div> <!-- end section-header -->
+    
+      <div class="row about-list block-lg-one-half block-tab-whole" data-animate-block>
+    
+        <div class="column about-item" data-animate-el>
+          <div class="about-logo-block">
+            <img src="./Image/LOGO_SVL v2.png" alt="Logo SVL">
+          </div>
+          <div class="about-text">
+            <p>
+              <strong>Multiservicios Logisticos S.V.L.</strong> funciona como Operador Logístico, con empresas aliadas en la prestación
+              de servicios por las Aduanas (La Guaira, Maiquetía, Paraguachon y San
+              Antonio del Táchira).
+            </p>
+          </div>
+        </div>
+    
+        <div class="column about-item" data-animate-el>
+          <div class="about-logo-block">
+            <img src="./Image/servicustoms v2.png" alt="Agente Aduanal">
+          </div>
+          <div class="about-text">
+            <p>
+              En <strong>SERVICUSTOMS AGENCY</strong> somos agentes aduanales expertos en la Aduana Marítima de Puerto Cabello.
+            </p>
+          </div>
+        </div>
+      </div> <!-- end about-list -->
+
+          <!-- Bloque de Misión, Visión y Objetivos -->
+      <div class="row about-info block-lg-one-half block-tab-whole" data-animate-block>
+        <div class="column about-info-item" data-animate-el>
+          <h3 class="about-info-title">MISIÓN</h3>
+          <p class="about-info-text">
+            Nos enfocamos en satisfacer las necesidades logísticas de importación, exportación y transporte terrestre, ofreciendo tecnología innovadora, talento altamente calificado y prácticas eficientes que garantizan seguridad, calidad y sostenibilidad.
+          </p>
+        </div>
+        <div class="column about-info-item" data-animate-el>
+          <h3 class="about-info-title">VISIÓN</h3>
+          <p class="about-info-text">
+            Ser la empresa prestadora de servicios de soporte logístico de aduanas especializado para brindar procesos eficientes y eficaces.
+          </p>
+        </div>
+        <div class="column about-info-item" data-animate-el>
+          <h3 class="about-info-title">OBJETIVOS</h3>
+          <p class="about-info-text">
+            Ofrecemos soluciones logísticas especializadas, garantizando gestión integral, estándares eficientes y sincronización con los sistemas de nuestros clientes para ser aliados estratégicos y fortalecer sus cadenas operativas.
+          </p>
+        </div>
+      </div>
+    </section> <!-- end s-about -->
+
+
+    <!-- <section id="three" class="wrapper style1 special fade-up" class="info-section fade-in"> -->
+    <section id="three" class="wrapper style1 special fade-up">
+  
       <div class="container">
         <header class="major">
           <h2>Nuestros <strong>servicios</strong></h2>
@@ -124,89 +152,250 @@
         <div class="box alt">
           <div class="row gtr-uniform">
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/aduana-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                      <img src="./Image/aduana-01.png" alt="Icono Aduanas" class="circle-bg">
+                      <span class="icon solid alt major fa-chart-area"></span>
+                    </div>
+                    <h3>Aduanas</h3>
+                    <p>
+                      Ofrecemos el servicio de desaduanamiento tanto para las importaciones como para las exportaciones,
+                      donde realizamos todo seguimiento y coordinación de sus cargas, cumpliendo con todas las normas y
+                      exigencias legales en el menor tiempo posible.
+                    </p>
+                  </div>
+                  <!-- Lado posterior -->
+                  <div class="card-back">
+                    <p>
+                      Más detalles sobre Aduanas: seguimiento y coordinación de cargas, normas legales.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3>Aduanas</h3>
-              <p>
-                Ofrecemos el servicio de desaduanamiento tanto para las importaciones como para las exportaciones,
-                donde realizamos todo seguimiento y coordinación de sus cargas, cumpliendo con todas las normas y
-                exigencias legales en el menor tiempo posible.
-              </p>
             </section>            
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/flete-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                      <img src="./Image/flete-01.png" alt="Icono Aduanas" class="circle-bg">
+                      <span class="icon solid alt major fa-chart-area"></span>
+                    </div>
+                    <h3>Flete Internacional</h3>
+                    <p>
+                      Ofrecemos la recolecta de su carga en cualquier parte del mundo con entregas
+                      en aeropuertos y puertos de Venezuela con asesoría en las mejores opciones y
+                      precios para el buen manejo de sus cargas.
+                    </p>
+                  </div>
+                  <!-- Lado posterior de la tarjeta -->
+                  <div class="card-back">
+                    <p>
+                      Más detalles sobre Flete internacional: ...
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3>Flete Internacional</h3>
-              <p>
-                Ofrecemos la recolecta de su carga en cualquier parte del mundo con entregas
-                en aeropuertos y puertos de Venezuela con asesoría en las mejores opciones y
-                precios para el buen manejo de sus cargas.
-              </p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/terrestre-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                      <img src="./Image/terrestre-01.png" alt="Icono Aduanas" class="circle-bg">
+                      <span class="icon solid alt major fa-chart-area"></span>
+                    </div>
+                    <h3>Transporte terrestre</h3>
+                    <p>
+                      Prestamos el servicio para retiro de carga suelta desde planta y posteriormente
+                      traslado a Puerto Cabello. Tambien el llevado a las intalaciones del cliente
+                      donde lo requiere.
+                    </p>
+                  </div>
+                  <!-- Lado posterior de la tarjeta -->
+                  <div class="card-back">
+                    <p>
+                      Más detalles sobre Transporte terrestre: ...
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3>Transporte terrestre</h3>
-              <p>
-                Podemos prestar el servicio para retiro de carga suelta en planta y posterior traslado
-                a Puerto Cabello, de igual forma, si el llenado es en las instalaciones del cliente,
-                perfectamente realizamos el retiro del contenedor vacío, se traslada a planta y una vez
-                cargado el equipo lo llevamos hasta la zona portuaria.
-              </p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/logistica-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                      <img src="./Image/logistica-01.png" alt="Icono Aduanas" class="circle-bg">
+                      <span class="icon solid alt major fa-chart-area"></span>
+                    </div>
+                    <h3>Coordinacion logistica</h3>
+                    <p>
+                      Ofrecemos coordinación logistica entendiendo que existen contratos de
+                      compra-venta. De igual manera, realizamos toda la coordinación de espacio.
+                    </p>
+                  </div>
+                  <!-- Lado posterior de la tarjeta -->
+                  <div class="card-back">
+                    <p>
+                      Más detalles sobre la coordinación logistica: hacemos seguimiento a la
+                      confirmación del Booking, hacemos los Draft BL, cumplimos con los Cut-Off de los mismos
+                      así como el seguimiento del transit time desde el Puerto Salida hasta Puerto de Llegada.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3>Coordinacion logistica</h3>
-              <p>
-                Ofrecemos entendiendo que existen contratos de compra-venta,
-                para ello realizamos toda la coordinación de espacio, seguimiento a la
-                confirmación del Booking, hacemos los Draft BL, cumplimos con los Cut-Off de los mismos
-                así como el seguimiento del transit time desde el Puerto Salida hasta Puerto de Llegada.
-              </p>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/almacen-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                    <img src="./Image/almacen-01.png" alt="Icono Aduanas" class="circle-bg">
+                    <span class="icon solid alt major fa-chart-area"></span>
+                  </div>
+                  <h3>Almacen logistico</h3>
+                  <p>
+                    Garantizamos que tus mercancías se almacenan, se manipulen de manera óptima y
+                    de la forma más rentable. Tenemos la ubicación adecuada para almacenar
+                    tus productos en cualquier lugar del mundo y darte las soluciones de almacenaje
+                    específicas para tu tipo de sector industrial.
+                  </p>
+                </div>
+                <!-- Lado posterior de la tarjeta -->
+                <div class="card-back">
+                  <p>
+                    Más detalles sobre almacen logistico: ...
+                  </p>
+                </div>
               </div>
-              <h3>Almacen logistico</h3>
-              <p>
-                Garantizamos que tus mercancías se almacenan, se manipulen de manera óptima y
-                de la forma más rentable. Tenemos la ubicación adecuada para almacenar
-                tus productos en cualquier lugar del mundo y darte las soluciones de almacenaje
-                específicas para tu tipo de sector industrial.
-              </p>
+            </div>
             </section>
             <section class="col-4 col-6-medium col-12-xsmall">
-              <div class="circle-container">
-                <img src="./Image/asesoria-01.png" alt="Icono Aduanas" class="circle-bg">
-                <span class="icon solid alt major fa-chart-area"></span>
+              <div class="card-container">
+                <div class="card">
+                  <!-- Lado frontal de la tarjeta -->
+                  <div class="card-front">
+                    <div class="circle-container">
+                      <img src="./Image/asesoria-01.png" alt="Icono Aduanas" class="circle-bg">
+                      <span class="icon solid alt major fa-chart-area"></span>
+                    </div>
+                    <h3>Asesoría Tecnica</h3>
+                    <p>
+                      Contamos con profecionales con amplia
+                      experiencia en materia y caracter laboral en la máxima
+                      autoridad aduanera, garantizando la confianza y seguridad
+                      en el acompañamiento de la operación.
+                    </p>
+                  </div>
+                  <!-- Lado posterior de la tarjeta -->
+                  <div class="card-back">
+                    <p>
+                      Asesoría Tecnica: ...
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3>Asesoría Tecnica</h3>
-              <p>
-                Contamos con profecionales con amplia
-                experiencia en materia y caracter laboral en la maxima
-                autoridad aduanera, garantizando la confianza y seguridad
-                en el acompañamiento de la operación.
-              </p>
             </section>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="moving-image-container">
+    <!-- <section id="moving-image-container">
       <div class="moving-image"></div>
+    </section> -->
+
+    <section class="tren" id="treen">
+      <div class="container-tren">
+        <!-- Título y comentario acorde al tema -->
+        <h2 class="section-title">Tren Ejecutivo</h2>
+        <p class="section-comment">
+          Embarca en el viaje del éxito: descubre el recorrido de líderes que impulsan la innovación.
+        </p>
+        <!-- Se definen los radio buttons para controlar el slider -->
+        <input type="radio" name="dot" id="one" checked>
+        <input type="radio" name="dot" id="two">
+        <!-- Contenedor del slider con dos slides -->
+        <div class="main-card">
+          <!-- Primer slide -->
+          <div class="cards-tren">
+            <div class="card-tren">
+              <div class="content-tren">
+                <div class="img-tren">
+                  <img src="Image/example1.jpg" alt="Omar E. Villanueva">
+                </div>
+                <div class="details-tren">
+                  <div class="name-tren">LCD. OMAR E. VILLANUEVA</div>
+                  <div class="job-tren">Director Ejecutivo</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-tren">
+              <div class="content-tren">
+                <div class="img-tren">
+                  <img src="Image/example1.jpg" alt="Miguel E. Armas">
+                </div>
+                <div class="details-tren">
+                  <div class="name-tren">LCDO. MIGUEL E ARMAS</div>
+                  <div class="job-tren">Director Ejecutivo</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-tren">
+              <div class="content-tren">
+                <div class="img-tren">
+                  <img src="Image/example1.jpg" alt="Arnold J. Cardenas">
+                </div>
+                <div class="details-tren">
+                  <div class="name-tren">LCDO. ARNOLD J. CARDENAS</div>
+                  <div class="job-tren">Director Ejecutivo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Segundo slide -->
+          <div class="cards-tren">
+            <div class="card-tren">
+              <div class="content-tren">
+                <div class="img-tren">
+                  <img src="Image/example1.jpg" alt="Irvin Lorven">
+                </div>
+                <div class="details-tren">
+                  <div class="name-tren">LCDO. IRVIN LORVEN</div>
+                  <div class="job-tren">Director Ejecutivo</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-tren">
+              <div class="content-tren">
+                <div class="img-tren">
+                  <img src="Image/example1.jpg" alt="Javier Garcia">
+                </div>
+                <div class="details-tren">
+                  <div class="name-tren">LCDO. JAVIER GARCIA</div>
+                  <div class="job-tren">Director de Mercadeo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Indicadores de navegación -->
+        <div class="button-tren">
+          <label for="one" class="one"></label>
+          <label for="two" class="two"></label>
+        </div>
+      </div>
     </section>
+
+    
 
     <section id="testimonials">
       <div class="container">
@@ -219,7 +408,7 @@
               Excelente atención y profesionalismo."
             </p>
             <h3>Juan Pérez</h3>
-            <p>CEO, Empresa XYZ</p>
+            <p>CEO, PEMCO.</p>
           </div>
           <div class="testimonial-card fade-in">
             <p>
@@ -227,7 +416,7 @@
               importación mucho más fácil. Recomendado 100%."
             </p>
             <h3>Maria López</h3>
-            <p>Directora de Logística, Compañía ABC</p>
+            <p>Directora de Logística, Redvital.</p>
           </div>
           <div class="testimonial-card fade-in">
             <p>
@@ -235,7 +424,7 @@
               logísticas, siempre entregando en tiempo y forma."
             </p>
             <h3>Carlos Méndez</h3>
-            <p>Gerente de Operaciones, Corp Global</p>
+            <p>Gerente de Operaciones, CABEL.</p>
           </div>
         </div>
       </div>
@@ -246,11 +435,23 @@
           <img src="./Image/peugeot_logo-removebg-preview.png" alt="Logo 3">
           <img src="./Image/logo-cabel-removebg-preview.png" alt="Logo 4">
           <img src="./Image/PM-logo-footer.png" alt="Logo 5">
+          <img src="./Image/logo azufrenca.png" alt="Logo 6">
+          <img src="./Image/logo casa fresca.png" alt="Logo 7">
+          <img src="./Image/logo cde.png" alt="Logo 8">
+          <img src="./Image/logo guarani.png" alt="Logo 9">
+          <img src="./Image/logo plasticos.png" alt="Logo 10">
+          <img src="./Image/logo unidas.png" alt="Logo 11">
           <img src="./Image/Logo-Redvital-con-eslogan.png" alt="Logo 1 duplicado"> <!-- Duplicado para efecto continuo -->
           <img src="./Image/Logo-Produvisa-Disgaven.png" alt="Logo 2 duplicado">
           <img src="./Image/peugeot_logo-removebg-preview.png" alt="Logo 3 duplicado">
           <img src="./Image/logo-cabel-removebg-preview.png" alt="Logo 4 duplicado">
           <img src="./Image/PM-logo-footer.png" alt="Logo 5 duplicado">
+          <img src="./Image/logo azufrenca.png" alt="Logo 6 duplicado">
+          <img src="./Image/logo casa fresca.png" alt="Logo 7 duplicado">
+          <img src="./Image/logo cde.png" alt="Logo 8 duplicado">
+          <img src="./Image/logo guarani.png" alt="Logo 9 duplicado">
+          <img src="./Image/logo plasticos.png" alt="Logo 10 duplicado">
+          <img src="./Image/logo unidas.png" alt="Logo 11 duplicado">
         </div>
       </div>
     </section>
@@ -258,29 +459,57 @@
     <section id="contact" class="contact-section">
       <div class="container">
         <h2>Contactanos</h2>
-        <p>Si está listo para optimizar sus operaciones logísticas, ¡contáctenos hoy!</p>
-        <form action="mailto:rickstekman27@gmail.com" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="¿Cuál es tu Nombre?" required />
-          <input type="email" name="email" placeholder="¿Cuál es tu Email?" required />
-          <textarea name="message" placeholder="¿Cómo podemos ayudarte?" required></textarea>
-          <button type="submit">ENVIAR</button>
+        <p>Si está listo para optimizar sus operaciones logísticas, ¡contáctenos!</p>
+        <form action="https://formspree.io/f/xdkewyyp" method="POST">
+          <label>
+            Tu nombre o el de tu empresa:
+            <input type="text" name="name" placeholder="Ingresa tu nombre o el nombre de la empresa" required>
+          </label>
+          <label>
+            Tu email:
+            <input type="email" name="email" placeholder="Ingresa tu email" required>
+          </label>
+          <label>
+            Tu mensaje:
+            <textarea name="message" placeholder="¿Como podemos ayudarte?" required></textarea>
+          </label>
+          <button type="submit">Contactanos</button>
         </form>
       </div>
     </section>
     
+
+    
     <footer>
-      <p>&copy; Multiservicios Logisticos S.V.L. 2021 & SERVICUSTOMS AGENCY | Todos los derechos reservados</p>
+      <p>&copy; Multiservicios Logisticos S.V.L. 2025 & SERVICUSTOMS AGENCY | Todos los derechos reservados</p>
       <p>
-        Calle Municipio, cruce con salom, C.C. Carite, Planta Baja, Oficina 16.
-        Puerto Cabello - Estado Carabobo
+        <a 
+          href="https://www.google.com/maps/search/?api=1&query=Valencia,+Edo+Carabobo:+C.C.+Vi%C3%B1a+Plaza,+piso+6,+Oficina+19" 
+          target="_blank" 
+          class="map-link">
+          Valencia, Edo Carabobo: C.C. Viña Plaza, piso 6, Oficina 19
+        </a>
       </p>
     </footer>
-
-    <script src="script.js"></script>
-
+    
+    
     <!-- Botón flotante -->
     <a href="#contact" class="floating-btn">
       <img src="./Image/ws-01-01.png" alt="Botón flotante" />
+      <ul id="Social">
+        <li>
+          <a href="https://instagram.com/multiservicios_svl/" target="_blank">
+            <img src="./Image/INSTAGRAM trans-01-01.png" alt="Instagram" height="30" />
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com/svl.logistica/" target="_blank">
+            <img src="./Image/facebook trans-01.png" alt="Facebook" height="30" />
+          </a>
+        </li>
+      </ul>
     </a>
   </body>
+
+  <script src="script.js"></script>
 </html>

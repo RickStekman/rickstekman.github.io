@@ -149,3 +149,74 @@ function openTab(evt, tabId) {
   document.getElementById(tabId).classList.add('active');
   evt.currentTarget.classList.add('active');
 }
+
+
+
+
+// animacion de la carta
+
+const cards = document.querySelectorAll('.card-container');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const innerCard = card.querySelector('.card');
+    innerCard.classList.toggle('is-flipped');
+  });
+});
+
+
+// contacto
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Validar que el nombre solo contenga letras y espacios
+  const namePattern = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+  if (!namePattern.test(name)) {
+    alert('Please enter a valid name (letters and spaces only).');
+    return;
+  }
+
+  // Validar el formato del correo
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Validar que el mensaje no esté vacío
+  if (message.length < 10) {
+    alert('Please enter a message with at least 10 characters.');
+    return;
+  }
+
+  alert('Form submitted successfully!');
+  // Aquí podrías enviar el formulario a un servidor o procesarlo como desees
+});
+
+//tren ejecutivo
+// Timer para el auto slide (5 segundos)
+let autoSlideTimer = setTimeout(() => {
+  document.getElementById('two').checked = true;
+}, 5000);
+
+// Si el usuario interactúa (click en cualquier radio) se cancela la transición automática
+const radios = document.querySelectorAll('input[name="dot"]');
+radios.forEach(radio => {
+  radio.addEventListener('click', () => {
+    clearTimeout(autoSlideTimer);
+  });
+});
+
+
+// footer
+document.querySelector('.map-link').addEventListener('click', function () {
+  // URL de Google Maps
+  const googleMapsUrl = 'https://www.google.com/maps?q=C.C.+Viña+Plaza,+piso+6,+Oficina+19,+Valencia,+Estado+Carabobo';
+  window.open(googleMapsUrl, '_blank'); // Abre el enlace en una nueva pestaña
+});
+

@@ -217,12 +217,15 @@ nav ul li a:hover {
 /* Hero Section Styles */
 /* Hero Section Styles */
 #hero {
-  background-image: url("../Image/pexels-heibbymarvel-5224742.jpg");
+  /* background-image: url("../Image/pexels-heibbymarvel-5224742.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
+  
+  position: relative;
   height: 100vh; /* Esto hace que la sección ocupe toda la altura de la pantalla */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center; /* Centra el contenido vertical y horizontalmente */
@@ -237,6 +240,64 @@ nav ul li a:hover {
     padding-top: 0px; /* Ajusta esto para que no quede un espacio innecesario */
     margin-top: 0;
   }
+}
+
+/* Contenedor para el slider de fondo, ubicado atrás del contenido */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Debe estar detrás del contenido */
+}
+
+/* Cada slide ocupa toda la sección y se animará en opacidad */
+.bg-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: bgFade 15s infinite;
+}
+
+/* Define un retraso para cada slide para que se muestren en secuencia */
+.bg-slider .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.bg-slider .slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.bg-slider .slide:nth-child(3) {
+  animation-delay: 10s;
+}
+
+/* 
+  La animación bgFade controla la opacidad:
+  - Inicia invisible,
+  - Se funde (fade in) hasta opacidad 1,
+  - Se mantiene visible por un tiempo,
+  - Y se desvanece (fade out).
+*/
+@keyframes bgFade {
+  /* Inicio: fade in */
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  /* Se mantiene visible */
+  33.33% { opacity: 1; }
+  /* Se funde para ocultarse */
+  43.33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Asegúrate de que el contenido del hero esté en primer plano */
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -382,235 +443,145 @@ nav ul li a:hover {
 }
 
 
-
-
-
-
+/* Estilos para la sección About */
 /* Estilos para la sección About */
 /* Estilos para la sección About */
 /* Estilos para la sección About */
 /* Estilos para la sección About */
 
-#about {
-  padding: 50px 20px;
-  /*  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)), url('../Image/background-about.jpg') no-repeat center/cover; */
-  background: url(../Image/pic03.jpg) no-repeat center center/cover;
-  color: white;
+
+/* Sección Quiénes Somos */
+.s-about {
+  background: url(../Image/banner01.jpg) no-repeat center center/cover;
+  color: #ffffff; /* Texto blanco */
+  padding: 60px 20px;       /* Espaciado alrededor del contenido */
+  text-align: center;       /* Centrado de texto en la sección */
+  border-top: 3px solid #dbe260;
 }
 
-/* Encabezado */
-.about-header h1 {
-  font-size: clamp(2.8rem, 4vw, 3.5rem);
-  margin-bottom: 15px;
-  text-align: center; /* Centra el título */
+/* Encabezado de la sección */
+.s-about .section-header {
+  margin-bottom: 40px;
 }
 
-
-.about-header h1 {
-  font-size: 2.5rem;
+.s-about .text-pretitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: whitesmoke;              /* Puedes cambiarlo para que resalte o armonice con tu diseño */
+  letter-spacing: 1.5px;
   margin-bottom: 10px;
 }
 
-.about-header p {
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 800px; /* Limitar ancho para mejor legibilidad */
-  margin: 0 auto; /* Centrar horizontalmente */
-  text-align: center; /* Centrar el texto */
+.s-about .text-display-title {
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  line-height: 1;
+  font-weight: 100;
+  color: #ddd;
+  border-bottom: 3px solid #ddd;
+  display: inline-block;
+  padding-bottom: 15px;
+  margin: 0 auto 10px;   /* Centrado horizontal y separación inferior */
+  max-width: 1000px;      /* Limita el ancho del h1 para que no se abra tanto */
+  text-align: center;    /* Asegura que el contenido se centre dentro del contenedor */
+}
+
+.s-about .section-header {
+  margin-bottom: 0px; /* Disminuye el margen inferior del encabezado */
 }
 
 
-/* Tarjetas de las Compañías */
-.about-companies {
+/* Contenedor de elementos sobre "Quiénes somos" */
+.about-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px; /* Más espacio entre tarjetas */
   justify-content: center;
-  margin: 40px auto;
+  gap: 80px;  /* Espacio entre elementos */
 }
 
-.company-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 10px 10px;
+/* Cada elemento de la lista */
+.about-item {
+  background-color: transparent;  /* Sin fondo para mantener el diseño limpio */
+  padding: 20px;
+  width: 400px;
+  text-align: left;  /* Alinear el texto hacia la izquierda para una lectura cómoda */
+}
+
+/* Bloque de logo (imagen) para cada elemento */
+.about-logo-block {
   text-align: center;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  width: 100%; /* Ocupa todo el ancho del contenedor */
-  max-width: 300px; /* Ancho máximo */
-  max-height: 300px; /* Altura uniforme */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
 }
 
-.company-logo {
-  width: 300px; /* Logos más grandes para laptops */
-  margin-bottom: 10px;
+/* Estilos para agrandar las imágenes en la sección */
+.about-logo-block img {
+  max-width: 220px;   /* Aumenta el tamaño máximo de la imagen */
+  height: auto;
 }
 
-.company-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+/* Estilos para el párrafo dentro de cada elemento */
+.about-text p {
+  font-size: 20px;    /* Aumenta el tamaño de la fuente para una lectura más cómoda */
+  line-height: 1.6;
+  color: #f4f4f4;
 }
 
-.company-card:hover {
-  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4); /* Agrega una sombra más pronunciada */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza el efecto */
-}
-
-
-/* Detalles de la Sección */
-.about-details {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  justify-content: center;
-  max-width: 850px; /* Limitar ancho total */
-  margin: 0 auto; /* Centrar horizontalmente */
-}
-
-.detail {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 250px; /* Tamaño uniforme para todas las tarjetas */
-  margin: 0 auto;
-}
-
-.detail h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.detail p {
-  font-size: 0.9rem; /* Reducir tamaño del texto */
-  line-height: 1.4; /* Ajustar espaciado entre líneas */
-  max-width: 90%; /* Reducir ancho del texto */
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.detail:hover {
-  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Estilo Responsivo */
-
-@media (max-width: 1024px) {
-  .about-details {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas medianas */
-  }
-}
-
-@media (min-width: 1024px) {
-  .about-companies {
-    gap: 30px; /* Ajustar espacio para laptops */
-  }
-
-  .company-card {
-    max-width: 400px; /* Tarjetas más anchas en pantallas grandes */
-    height: 450px; /* Ajuste de altura */
-  }
-
-  .about-details {
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
-  }
-}
-
+/* Responsividad: ajustes para dispositivos móviles */
 @media (max-width: 768px) {
-  .about-companies {
-    flex-direction: column; /* Una columna en pantallas medianas */
-    gap: 15px;
+  .about-list {
+    flex-direction: column;
+    gap: 20px;
   }
-
-  .about-header h1 {
-    font-size: 2rem;
-  }
-
-  .about-header p {
-    font-size: 1rem; /* Ajustar texto en pantallas pequeñas */
-  }
-
-  .about-companies {
-    flex-direction: column; /* Tarjetas en una sola columna */
-    gap: 15px;
-  }
-
-  .company-card {
-    height: auto; /* Adaptar altura al contenido */
-  }
-
-  .about-details {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas más pequeñas */
-    
-  }
-
-  .detail {
-    max-width: 90%; /* Tarjetas más pequeñas en pantallas pequeñas */
-    padding: 15px; /* Reducir el padding */
-  }
-
-  .detail h3 {
-    font-size: 1.5rem;
-  }
-
-  .detail p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
   
-  .about-companies {
-    display: flex; /* Ya está definido, pero asegúrate */
-    flex-direction: column; /* Coloca las tarjetas en una sola columna */
-    align-items: center; /* Centra horizontalmente las tarjetas */
-    gap: 20px; /* Añade espacio entre las tarjetas */
-  }
-  .company-card {
-    width: 90%; /* Cambia el ancho a un porcentaje para adaptarse a la pantalla */
-    max-width: 300px; /* Máximo permitido para evitar que crezca demasiado */
-    margin: 0 auto; /* Centra automáticamente */
-  }
-
-  .company-logo {
-    width: 130px; /* Reducir tamaño en móviles */
-  }
-
-  .about-header h1 {
-    font-size: 2rem;
-  }
-
-  .about-header p {
-    font-size: 0.9rem;
-  }
-
-  .company-logo {
-    width: 120px; /* Logos más pequeños */
-  }
-
-  .about-details {
-    grid-template-columns: 1fr; /* Una sola columna para pantallas pequeñas */
-  }
-
-  .detail h3 {
-    font-size: 1.2rem;
-  }
-
-  .detail p {
-    font-size: 90%;
+  .about-item {
+    width: 90%;
+    margin: 0 auto;
   }
 }
+/* Estilos para la sección de Misión, Visión y Objetivos */
+.about-info {
+  margin-top: 40px; /* Espacio superior para separar del bloque anterior */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: left; /* Alineación del texto */
+}
+
+.about-info-item {
+  background-color: #fff;      /* Fondo blanco para resaltar la información */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;                     /* Permite que las columnas se ajusten */
+  max-width: 300px;            /* Limita el ancho de cada bloque, ajústalo según convenga */
+}
+
+.about-info-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.about-info-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Adaptabilidad: en móviles, los bloques se apilan */
+@media (max-width: 768px) {
+  .about-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-info-item {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
 
 
 /* Estilo general de la sección THREE */
@@ -620,7 +591,7 @@ nav ul li a:hover {
 /* Estilo general de la sección THREE */
 /* Estilo general de la sección THREE */
 #three {
-  background: url(../Image/pic04.jpg) no-repeat center center/cover;
+  background: url(../Image/banner02.jpg) no-repeat center center/cover;
   color: #ffffff; /* Texto blanco */
   padding: 60px 20px; /* Espaciado interno */
   text-align: center; /* Centra el contenido */
@@ -628,6 +599,7 @@ nav ul li a:hover {
   position: relative;
   z-index: 1;
   box-sizing: border-box;
+  border-top: 3px solid #dbe260;
 }
 
 /* Estilo del encabezado */
@@ -639,7 +611,7 @@ nav ul li a:hover {
 }
 
 #three .major p {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1;
   margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.8); /* Texto más suave */
@@ -733,6 +705,9 @@ header.major {
   width: 120px;
   height: 120px;
   margin: 0 auto 20px; /* Centra el contenedor */
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .circle-bg {
@@ -757,6 +732,53 @@ header.major {
   font-size: 3rem; /* Ajusta el tamaño del ícono */
   color: #f1c40f; /* Define el color del ícono */
   z-index: 1; /* El ícono queda sobre el fondo */
+  margin-bottom: 0;
+}
+
+.circle-container {
+  margin-bottom: 0;
+}
+
+
+
+/* ==== Estilos para el flip de las tarjetas ==== */
+.card-container {
+  perspective: 1000px;           /* Añade perspectiva para el efecto 3D */
+  max-width: 300px;              /* Ajusta el ancho según tu diseño */
+  margin: 0 auto;                /* Centra la tarjeta */
+  height: 400px;                 /* Altura fija para que la tarjeta no se desborde */
+  overflow: hidden;              /* Evita que el contenido extra se muestre fuera */
+}
+
+.card {
+  width: 100%;
+  height: 100%;                  /* Ocupa toda la altura del contenedor */
+  position: relative;
+  transform-style: preserve-3d;  /* Mantiene el efecto 3D en los hijos */
+  transition: transform 0.6s ease; /* Animación fluida */
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);    /* Aplica el giro al reverso */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
+  backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
+  box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+}
+
+.card-back {
+  transform: rotateY(180deg);    /* Invierte la cara trasera */
+  /* background-color: rgba(0, 0, 0, 0.7); /* Color de fondo para el reverso, ajústalo si lo deseas */
+  color: rgba(255, 255, 255, 0.9);      /* Color del texto en el reverso */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
 
@@ -914,6 +936,176 @@ header.major:after {
 }
 
 
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/* Se usa .tren ya que en tu HTML la sección tiene la clase "tren" */
+.tren {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid #dbe260;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-comment {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #ddd;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container-tren {
+  box-sizing: border-box;
+  width: 100%;
+  background: url(../Image/banner.jpg) no-repeat center center/cover;
+  overflow: hidden;
+  padding: 30px 0;
+  /* display: flex;*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+
+/* Contenedor del slider (200% para dos slides) */
+.main-card {
+  width: 200%;
+  display: flex;
+  transition: all 1s ease;
+}
+
+/* Al seleccionar el radio #two, se mueve el slider */
+#two:checked ~ .main-card {
+  margin-left: -100%;
+}
+
+/* Cada slide ocupa 50% de .main-card */
+.cards-tren {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Centra las tarjetas dentro del slide */
+  gap: 20px;  /* Espacio uniforme entre tarjetas */
+  padding: 20px;
+}
+
+/* Tarjetas con forma cuadrada y estética */
+.card-tren {
+  background: #fff;
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Contenido interno de la tarjeta */
+.content-tren {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.img-tren {
+  height: 130px;
+  width: 130px;
+  margin-bottom: 14px;
+  background: #dbe260;
+  padding: 3px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img-tren img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+/* Detalles de texto */
+.details-tren .name-tren {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.details-tren .job-tren {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* Botones del slider */
+.button-tren {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+.button-tren label {
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  margin: 0 4px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+/* Indicadores activos */
+#one:checked ~ .button-tren label.one,
+#two:checked ~ .button-tren label.two {
+  width: 35px;
+}
+
+/* Inactivos */
+#one:checked ~ .button-tren label.two,
+#two:checked ~ .button-tren label.one {
+  width: 15px;
+}
+
+/* Ocultar los radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Media Queries para responsive */
+
+/* Para pantallas medianas: mostrar 2 tarjetas por fila */
+@media (max-width: 768px) {
+  .card-tren {
+    width: calc(100% / 2 - 20px);
+  }
+}
+
+/* Para pantallas pequeñas: una tarjeta por fila */
+@media (max-width: 600px) {
+  .card-tren {
+    width: 100%;
+  }
+}
 
 
 
@@ -959,7 +1151,7 @@ header.major:after {
   color: white;
   text-align: center;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-
+  margin-top: 30px;
 }
 
 .testimonial-cards {
@@ -1008,6 +1200,7 @@ header.major:after {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: white;
   line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 /* Hover effect */
@@ -1019,9 +1212,9 @@ header.major:after {
 
 /* Contenedor principal */
 .logo-scroller {
-  margin-top: 0px;
+  margin-top: 30px;
   position: relative;
-  width: 100vw; /* Ocupa el ancho completo de la pantalla */
+  width: 100%; /* Ocupa el ancho completo de la pantalla */
   overflow: hidden; /* Oculta lo que exceda los límites */
   background: white; /* Fondo opcional */
   padding: 0;
@@ -1100,60 +1293,117 @@ header.major:after {
 /* Contact Section Styles */
 /* Contact Section Styles */
 /* Contact Section Styles */
-
-#contact {
-  border-top: 3px solid #dbe260;
-}
+/* Sección de contacto */
 .contact-section {
-  background-color: #6dbccb;
-  color: white;
+  background-color: #333; /* Fondo oscuro */
+  color: #fff;
   padding: 50px 0;
 }
 
+/* Contenedor centralizado */
 .contact-section .container {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
 }
 
+/* Título */
+.contact-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Párrafo introductorio */
+.contact-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #b3b3b3;
+}
+
+/* Formulario: usamos flex para organizar los elementos */
 .contact-section form {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.contact-section form input,
+/* Etiquetas del formulario */
+.contact-section form label {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+/* Inputs y textarea */
+.contact-section form input[type="text"],
+.contact-section form input[type="email"],
 .contact-section form textarea {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 2px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #dbe260; /* Un color de borde que resalta */
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fff; /* Fondo claro para que se vean bien los textos */
+  color: #333; /* Texto oscuro dentro de los inputs */
 }
 
-.contact-section form input:focus,
-.contact-section form textarea:focus {
-  border-color: #0056b3;
-  outline: none;
+/* Placeholders */
+.contact-section form input::placeholder,
+.contact-section form textarea::placeholder {
+  color: #333;
 }
 
+/* Botón de envío */
 .contact-section form button {
-  background: #0056b3;
-  color: white;
-  padding: 14px 24px;
-  font-size: 1.2rem;
+  background-color: #0056b3;
   border: none;
   border-radius: 8px;
-  width: 80%;
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
+/* Hover para el botón */
 .contact-section form button:hover {
-  background: #003366;
+  background-color: #003366;
 }
 
+/* Para navegadores modernos */
+.contact-section form input::placeholder,
+.contact-section form textarea::placeholder {
+  color: #999;
+}
+
+/* Para Chrome, Opera y Safari */
+.contact-section form input::-webkit-input-placeholder,
+.contact-section form textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+/* Para Firefox 19+ */
+.contact-section form input::-moz-placeholder,
+.contact-section form textarea::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Para Firefox 4 - 18 */
+.contact-section form input:-moz-placeholder,
+.contact-section form textarea:-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Para Internet Explorer 10+ */
+.contact-section form input:-ms-input-placeholder,
+.contact-section form textarea:-ms-input-placeholder {
+  color: #999;
+}
 
 
 
@@ -1172,11 +1422,25 @@ header.major:after {
 /* Footer Styles */
 
 footer {
-  background: #333;
+  background: #1c1d26;
   color: white;
   text-align: center;
   padding: 1rem 0;
 }
+
+.map-link {
+  cursor: pointer; /* Indica que es un elemento interactivo */
+  text-decoration: underline;
+  transition: color 0.3s ease; /* Suaviza el cambio de color */
+  color: white; /* Color por defecto de la ubicación */
+}
+
+.map-link:hover {
+  color: #dbe260; /* Color al pasar el cursor por encima */
+}
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
