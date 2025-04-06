@@ -1,32 +1,4 @@
-// Activar el fondo y ocultar el header al hacer scroll
-let lastScrollTop = 0; // Para almacenar la última posición del scroll
-
-window.addEventListener('scroll', function() {
-  const header = document.querySelector('header');
-  const nav = document.querySelector('nav'); // Referencia al navbar
-  
-  // Si el scroll ha bajado más de 50px
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');  // Oculta el header (o aplica efecto si es necesario)
-    nav.classList.add('navbar-scrolled'); // Agrega fondo oscuro al navbar
-  } else {
-    header.classList.remove('scrolled');  // El header vuelve a aparecer
-    nav.classList.remove('navbar-scrolled'); // El navbar vuelve a su color original
-  }
-
-  // También aplicar el efecto cuando el usuario haga scroll hacia abajo
-  let scrollTop = window.scrollY;
-  if (scrollTop > lastScrollTop) {
-    // Scroll hacia abajo
-    nav.classList.add('navbar-scrolled');
-  } else {
-    // Scroll hacia arriba
-    nav.classList.remove('navbar-scrolled');
-  }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para evitar valores negativos
-});
-
-// Función para aplicar la animación de entrada suave
+// Función para aplicar la animación de entrada suave             TODO ESTO ES DEL BURGER
 const fadeInElements = document.querySelectorAll('.fade-in');
 
 const observerOptions = {
@@ -49,6 +21,9 @@ const observer = new IntersectionObserver((entries, observer) => {
 fadeInElements.forEach(element => {
   observer.observe(element);
 });
+
+
+
 
 // Para las tarjetas de "services" y "testimonials", les agregamos la clase .fade-in a los elementos
 document.querySelectorAll('.service-card').forEach(card => {
@@ -86,6 +61,9 @@ testimonialCards.forEach(card => {
   observer.observe(card);
 });
 
+
+
+
 // Script para mostrar y ocultar el menú en dispositivos móviles
 document.getElementById("menu-toggle").addEventListener("click", function() {
   const navLinks = document.querySelector("#nav-links");
@@ -100,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.toggle("active");
   });
 });
+
+
 
 
 // Función para activar la animación cuando el elemento está en pantalla
@@ -198,6 +178,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
   // Aquí podrías enviar el formulario a un servidor o procesarlo como desees
 });
 
+
+
+
+
 //tren ejecutivo
 // Timer para el auto slide (5 segundos)
 let autoSlideTimer = setTimeout(() => {
@@ -211,6 +195,7 @@ radios.forEach(radio => {
     clearTimeout(autoSlideTimer);
   });
 });
+
 
 
 // footer

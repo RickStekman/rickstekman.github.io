@@ -217,42 +217,36 @@ nav ul li a:hover {
 /* Hero Section Styles */
 /* Hero Section Styles */
 #hero {
-  /* background-image: url("../Image/pexels-heibbymarvel-5224742.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;*/
-  
   position: relative;
-  height: 100vh; /* Esto hace que la sección ocupe toda la altura de la pantalla */
+  height: 100vh; /* Ocupa la altura completa de la ventana */
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center; /* Centra el contenido vertical y horizontalmente */
+  align-items: center;
   text-align: center;
-  color: white; /* Color de texto blanco para mayor visibilidad */
-  padding-top: 0; /* Quita el padding superior que tenías */
-  margin-top: 0px;
+  color: white;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
   #hero {
-    padding-top: 0px; /* Ajusta esto para que no quede un espacio innecesario */
+    padding-top: 0;
     margin-top: 0;
   }
 }
 
-/* Contenedor para el slider de fondo, ubicado atrás del contenido */
+/* Contenedor del slider de fondo */
 .bg-slider {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Debe estar detrás del contenido */
+  z-index: 1;
 }
 
-/* Cada slide ocupa toda la sección y se animará en opacidad */
+/* Cada slide */
 .bg-slider .slide {
   position: absolute;
   top: 0;
@@ -265,65 +259,52 @@ nav ul li a:hover {
   animation: bgFade 15s infinite;
 }
 
-/* Define un retraso para cada slide para que se muestren en secuencia */
-.bg-slider .slide:nth-child(1) {
-  animation-delay: 0s;
-}
-.bg-slider .slide:nth-child(2) {
-  animation-delay: 5s;
-}
-.bg-slider .slide:nth-child(3) {
-  animation-delay: 10s;
-}
+/* Secuencia de slides */
+.bg-slider .slide:nth-child(1) { animation-delay: 0s; }
+.bg-slider .slide:nth-child(2) { animation-delay: 5s; }
+.bg-slider .slide:nth-child(3) { animation-delay: 10s; }
 
-/* 
-  La animación bgFade controla la opacidad:
-  - Inicia invisible,
-  - Se funde (fade in) hasta opacidad 1,
-  - Se mantiene visible por un tiempo,
-  - Y se desvanece (fade out).
-*/
 @keyframes bgFade {
-  /* Inicio: fade in */
   0% { opacity: 0; }
   10% { opacity: 1; }
-  /* Se mantiene visible */
   33.33% { opacity: 1; }
-  /* Se funde para ocultarse */
   43.33% { opacity: 0; }
   100% { opacity: 0; }
 }
 
-/* Asegúrate de que el contenido del hero esté en primer plano */
+/* Contenido principal del hero en primer plano */
 .hero-content {
   position: relative;
   z-index: 2;
 }
 
-
-/* Estilos para los textos dentro del hero */
+/* Nuevo estilo para el <h2> con una animación de slide y fade-in */
 #hero h2 {
-  font-size: 4vw;  /* Toma el 6% del ancho de la ventana */
+  display: inline-block;
+  font-size: 4vw; /* O ajusta a lo que se acomode mejor */
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  /* Elimina los efectos de typewriter (border, overflow, etc.) usados previamente */
+  animation: slideFadeIn 1.5s ease-out forwards;
 }
 
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 #hero p {
-  font-size: 1.5vw; /* Toma el 2.5% del ancho de la ventana */
+  font-size: 1.5vw; /* Ajusta según tu diseño */
   margin-bottom: 1.5rem;
 }
 
-/* Animación de entrada suave */
-.fade-in {
-  opacity: 0;
-  transform: translateY(50px); /* Desplazamiento hacia abajo al inicio */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
-}
-
-.fade-in-visible {
-  opacity: 1;
-  transform: translateY(0); /* Vuelve a su posición original */
-}
 
 /* Botón de llamada a la acción */
 .cta-btn {
@@ -348,17 +329,16 @@ nav ul li a:hover {
     padding-top: 80px;
   }
   #hero h2 {
-    font-size: 3rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+    font-size: 3rem;
   }
-
   #hero p {
-    font-size: 1.2rem; /* Reducir tamaño del texto en pantallas pequeñas */
+    font-size: 1.2rem;
   }
-
   .cta-btn {
-    padding: 0.8rem 1.5rem; /* Reducir el tamaño del botón en pantallas pequeñas */
+    padding: 0.8rem 1.5rem;
   }
 }
+
 
 /* Estilos para los íconos de redes sociales */
 #Social {
@@ -382,9 +362,31 @@ nav ul li a:hover {
 }
 
 #Social a:hover {
-  color: #dbe260; /* Color de hover */
   transform: scale(1.1); /* Efecto de agrandar */
   filter: brightness(1.2); /* Aumenta el brillo del icono al hacer hover */
+}
+
+/* Estilos de las burbujas emergentes */
+#Social a::after {
+  content: attr(data-tooltip); /* Texto dinámico basado en atributo */
+  position: absolute;
+  top: 0px; /* Ajusta la posición sobre el icono */
+  right: 800px;
+  left: 100%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Centra la burbuja correctamente */
+  color: #fff; /* Texto blanco */
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 12px; /* Tamaño del texto */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  opacity: 0; /* Oculta la burbuja inicialmente */
+  pointer-events: none; /* No interfiere con los clics */
+  transition: opacity 0.3s ease; /* Efecto de aparición suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+#Social a:hover::after {
+  opacity: 1; /* Muestra la burbuja al pasar el mouse */
 }
 
 /* Para asegurar que las imágenes se adapten bien */
@@ -403,12 +405,12 @@ nav ul li a:hover {
 /* Estilo del botón flotante */
 .floating-btn {
   position: fixed;
-  bottom: 20px;  /* Distancia desde el fondo */
-  right: 20px;   /* Distancia desde la derecha */
-  width: 60px;   /* Ancho del botón */
-  height: 60px;  /* Altura del botón */
+  bottom: 20px; /* Distancia desde el fondo */
+  right: 20px;  /* Distancia desde la derecha */
+  width: 60px;  /* Ancho del botón */
+  height: 60px; /* Altura del botón */
   background-color: transparent; /* Fondo transparente */
-  border-radius: 50%;  /* Botón redondeado */
+  border-radius: 50%; /* Botón redondeado */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
   transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
   z-index: 9999; /* Para que siempre esté encima del contenido */
@@ -424,23 +426,29 @@ nav ul li a:hover {
   transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
 }
 
-
-/* Info Section Styles */
-.info-section {
-  padding: 50px 0;
-  background-color: #ffffff;
+/* Burbuja de texto */
+.floating-btn::after {
+  content: "Contáctanos directamente por WhatsApp"; /* Texto dentro de la burbuja */
+  position: absolute;
+  bottom: 80px; /* Ajusta la posición de la burbuja */
+  right: -10px; /* Ajusta para centrar la burbuja */
+  background-color: #25D366; /* Color del fondo (verde de WhatsApp) */
+  color: #fff; /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  font-size: 14px; /* Tamaño del texto */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease; /* Efecto de aparición gradual */
+  pointer-events: none; /* Evita que interfiera con clics */
 }
 
-.info-section .container {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
+.floating-btn:hover::after {
+  opacity: 1; /* Muestra la burbuja al pasar el mouse */
 }
 
-.info-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+
 
 
 /* Estilos para la sección About */
@@ -1462,8 +1470,6 @@ footer {
 }
 
 
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .service-cards,
@@ -1542,333 +1548,4 @@ html {
 			width: 75%;
 		}
 
-	footer.major {
-		margin: 4em 0 0 0;
-	}
-
-/* Form */
-
-	form {
-		margin: 0 0 2em 0;
-	}
-
-		form.cta {
-			max-width: 35em;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-	label {
-		color: #ffffff;
-		display: block;
-		font-size: 0.9em;
-		font-weight: 300;
-		margin: 0 0 1em 0;
-	}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select,
-	textarea {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: border-color 0.2s ease-in-out;
-		-webkit-transition: border-color 0.2s ease-in-out;
-		-ms-transition: border-color 0.2s ease-in-out;
-		transition: border-color 0.2s ease-in-out;
-		background: transparent;
-		border-radius: 4px;
-		border: solid 1px rgba(255, 255, 255, 0.3);
-		color: inherit;
-		display: block;
-		outline: 0;
-		padding: 0 1em;
-		text-decoration: none;
-		width: 100%;
-	}
-
-		input[type="text"]:invalid,
-		input[type="password"]:invalid,
-		input[type="email"]:invalid,
-		select:invalid,
-		textarea:invalid {
-			box-shadow: none;
-		}
-
-		input[type="text"]:focus,
-		input[type="password"]:focus,
-		input[type="email"]:focus,
-		select:focus,
-		textarea:focus {
-			border-color: #e44c65;
-		}
-
-	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.3)' /%3E%3C/svg%3E");
-		background-size: 1.25rem;
-		background-repeat: no-repeat;
-		background-position: calc(100% - 1rem) center;
-		height: 3em;
-		padding-right: 3em;
-		text-overflow: ellipsis;
-	}
-
-		select option {
-			color: #ffffff;
-			background: #1c1d26;
-		}
-
-		select:focus::-ms-value {
-			background-color: transparent;
-		}
-
-		select::-ms-expand {
-			display: none;
-		}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select {
-		height: 3em;
-	}
-
-	textarea {
-		padding: 0.75em 1em;
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		display: block;
-		float: left;
-		margin-right: -2em;
-		opacity: 0;
-		width: 1em;
-		z-index: -1;
-	}
-
-		input[type="checkbox"] + label,
-		input[type="radio"] + label {
-			text-decoration: none;
-			color: rgba(255, 255, 255, 0.75);
-			cursor: pointer;
-			display: inline-block;
-			font-size: 1em;
-			font-weight: 100;
-			padding-left: 2.55em;
-			padding-right: 0.75em;
-			position: relative;
-		}
-
-			input[type="checkbox"] + label:before,
-			input[type="radio"] + label:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				display: inline-block;
-				font-style: normal;
-				font-variant: normal;
-				text-rendering: auto;
-				line-height: 1;
-				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
-				font-weight: 900;
-			}
-
-			input[type="checkbox"] + label:before,
-			input[type="radio"] + label:before {
-				border-radius: 4px;
-				border: solid 1px rgba(255, 255, 255, 0.3);
-				content: '';
-				display: inline-block;
-				font-size: 0.8em;
-				height: 2.25em;
-				left: 0;
-				line-height: 2.25em;
-				position: absolute;
-				text-align: center;
-				top: 0;
-				width: 2.25em;
-			}
-
-		input[type="checkbox"]:checked + label:before,
-		input[type="radio"]:checked + label:before {
-			background: rgba(255, 255, 255, 0.25);
-			color: #ffffff;
-			content: '\f00c';
-		}
-
-		input[type="checkbox"]:focus + label:before,
-		input[type="radio"]:focus + label:before {
-			border-color: #e44c65;
-		}
-
-	input[type="checkbox"] + label:before {
-		border-radius: 4px;
-	}
-
-	input[type="radio"] + label:before {
-		border-radius: 100%;
-	}
-
-	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-
-/* Icon */
-
-	.icon {
-		text-decoration: none;
-		border-bottom: none;
-		position: relative;
-	}
-
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
-
-		.icon > .label {
-			display: none;
-		}
-
-		.icon:before {
-			line-height: inherit;
-		}
-
-		.icon.solid:before {
-			font-weight: 900 !important;
-		}
-
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands' !important;
-		}
-
-		.icon.alt {
-			text-decoration: none;
-		}
-
-			.icon.alt:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				display: inline-block;
-				font-style: normal;
-				font-variant: normal;
-				text-rendering: auto;
-				line-height: 1;
-				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
-				font-weight: 400;
-			}
-
-			.icon.alt:before {
-				color: #1c1d26 !important;
-				text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
-			}
-
-		.icon.major {
-			background: #272833;
-			border-radius: 100%;
-			cursor: default;
-			display: inline-block;
-			height: 6em;
-			line-height: 5.65em;
-			margin: 0 0 2em 0;
-			text-align: center;
-			width: 6em;
-		}
-
-			.icon.major:before {
-				font-size: 2.25em;
-			}
-
-			.icon.major.alt {
-				text-decoration: none;
-			}
-
-				.icon.major.alt:before {
-					-moz-osx-font-smoothing: grayscale;
-					-webkit-font-smoothing: antialiased;
-					display: inline-block;
-					font-style: normal;
-					font-variant: normal;
-					text-rendering: auto;
-					line-height: 1;
-					text-transform: none !important;
-					font-family: 'Font Awesome 5 Free';
-					font-weight: 400;
-				}
-
-				.icon.major.alt:before {
-					color: #272833 !important;
-					text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
-				}
-
-
-
-
-.tabs {
-            max-width: 600px;
-            margin: auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .tab-buttons {
-            display: flex;
-            border-bottom: 2px solid #ddd;
-        }
-        .tab-buttons button {
-            flex: 1;
-            padding: 10px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            transition: 0.3s;
-        }
-        .tab-buttons button.active {
-            border-bottom: 3px solid #007bff;
-            color: #007bff;
-        }
-        .tab-content {
-            padding: 20px;
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
+    
