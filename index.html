@@ -43,6 +43,7 @@
             <li><a href="#about">¿Quiénes somos?</a></li>
             <li><a href="#three">Servicios</a></li>
             <!-- <li><a href="#treen">Tren Ejecutivo</a></li> -->
+            <li><a href="#news-section">Noticias</a></li>
             <li><a href="#testimonials">Testimonios</a></li>
             <li><a href="#contact">Contáctanos</a></li>
           </ul>      
@@ -58,7 +59,7 @@
       <div class="bg-slider">
         <div class="slide" style="background-image: url('./Image/pexels-heibbymarvel-5224742.jpg');"></div>
         <div class="slide" style="background-image: url('./Image/pexels-pixabay-262353.jpg');"></div>
-        <div class="slide" style="background-image: url('./Image/place-flying-sunset-sky.jpg');"></div>
+        <div class="slide" style="background-image: url('./Image/banner.jpg');"></div>
         <!-- Para añadir más imágenes, agrega más div con class="slide" y la imagen deseada -->
       </div>
 
@@ -108,9 +109,21 @@
             </p>
           </div>
         </div>
+
+        <div class="column about-item" data-animate-el>
+          <div class="about-logo-block">
+            <img src="./Image/LOGO_SCL_INC-removebg-preview.png" alt="SCL">
+          </div>
+          <div class="about-text">
+            <p>
+              En <strong>SERVICE VALUE LOGISTICS, INC</strong> somos agentes de carga para facilitar de manera clave la logistica
+              internacional, asegurando que el proceso de envio de mercancias sea fluido y cumpla con todas las normastivas necesarias.
+            </p>
+          </div>
+        </div>
       </div> <!-- end about-list -->
 
-          <!-- Bloque de Misión, Visión y Objetivos -->
+          <!-- Bloque de Misión, Visión y Objetivos 
       <div class="row about-info block-lg-one-half block-tab-whole" data-animate-block>
         <div class="column about-info-item" data-animate-el>
           <h3 class="about-info-title">MISIÓN</h3>
@@ -130,7 +143,88 @@
             Ofrecemos soluciones logísticas especializadas, garantizando gestión integral, estándares eficientes y sincronización con los sistemas de nuestros clientes para ser aliados estratégicos y fortalecer sus cadenas operativas.
           </p>
         </div>
+      </div> -->
+
+      <div class="questions container">
+        <div class="questions_container">
+          <!-- MISIÓN -->
+          <article class="questions_padding">
+            <div class="questions_answer">
+              <h3 class="questions_title">
+                MISIÓN
+                <span class="questions_arrow">
+                  <img src="./Image/arrow.svg" alt="Flecha">
+                </span>
+              </h3>
+              <p class="questions_show">
+                Nos enfocamos en satisfacer las necesidades logísticas de importación,
+                exportación y transporte terrestre, ofreciendo tecnología innovadora,
+                talento altamente calificado y prácticas eficientes que garantizan seguridad,
+                calidad y sostenibilidad.
+              </p>
+            </div>
+          </article>
+    
+          <!-- VISIÓN -->
+          <article class="questions_padding">
+            <div class="questions_answer">
+              <h3 class="questions_title">
+                VISIÓN
+                <span class="questions_arrow">
+                  <img src="./Image/arrow.svg" alt="Flecha">
+                </span>
+              </h3>
+              <p class="questions_show">
+                Ser la empresa prestadora de servicios de soporte logístico de aduanas
+                especializado para brindar procesos eficientes y eficaces.
+              </p>
+            </div>
+          </article>
+    
+          <!-- OBJETIVOS -->
+          <article class="questions_padding">
+            <div class="questions_answer">
+              <h3 class="questions_title">
+                OBJETIVOS
+                <span class="questions_arrow">
+                  <img src="./Image/arrow.svg" alt="Flecha">
+                </span>
+              </h3>
+              <p class="questions_show">
+                Ofrecemos soluciones logísticas especializadas, garantizando gestión
+                integral, estándares eficientes y sincronización con los sistemas de
+                nuestros clientes para ser aliados estratégicos y fortalecer sus cadenas operativas.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
+      <script>
+        // Asegúrate de ejecutar el código solo cuando el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', () => {
+          // Selecciona todos los títulos de cada sección
+          document.querySelectorAll('.questions_title').forEach(title => {
+            title.addEventListener('click', () => {
+              // Obtiene el párrafo siguiente (la respuesta)
+              const answer = title.nextElementSibling;
+              // Busca la imagen de la flecha dentro del span
+              const arrow = title.querySelector('.questions_arrow img');
+    
+              // Alterna la clase para marcar el contenido activo
+              answer.classList.toggle('questions_show--active');
+              // Rota la flecha
+              arrow.parentElement.classList.toggle('questions_arrow--rotate');
+    
+              // Ajusta la altura según esté activa o no
+              if (answer.classList.contains('questions_show--active')) {
+                answer.style.height = answer.scrollHeight + 'px';
+              } else {
+                answer.style.height = '0';
+              }
+            });
+          });
+        });
+      </script>
     </section> <!-- end s-about -->
 
 
@@ -156,16 +250,24 @@
                     </div>
                     <h3>Aduanas</h3>
                     <p>
-                      Ofrecemos el servicio de desaduanamiento tanto para las importaciones como para las exportaciones,
-                      donde realizamos todo seguimiento y coordinación de sus cargas, cumpliendo con todas las normas y
-                      exigencias legales en el menor tiempo posible.
+                      Ofrecemos desaduanamiento para importaciones y exportaciones,
+                      coordinando cargas y cumpliendo normativas en el menor tiempo posible.
                     </p>
+                    <!-- Botón para activar el flip -->
+                    <button class="btn-flip">Ver más</button>
                   </div>
                   <!-- Lado posterior -->
                   <div class="card-back">
-                    <p>
-                      <strong>Más detalles sobre Aduanas:</strong> seguimiento y coordinación de cargas, normas legales.
-                    </p>
+                    <p><strong>Aéreas - Marítimas y Terrestres</strong></p>
+                    <ul>
+                        <li>Aduana Principal de Puerto Cabello</li>
+                        <li>Aduana Principal de La Guaira</li>
+                        <li>Aduana Principal de Maiquetía</li>
+                        <li>Aduana Principal de Maracaibo</li>
+                        <li>Aduana Principal de San Antonio del Táchira</li>
+                    </ul>
+                    <!-- Opcional: botón para volver a la cara frontal -->
+                    <button class="btn-flip">Volver</button>
                   </div>
                 </div>
               </div>
@@ -185,12 +287,20 @@
                       en aeropuertos y puertos de Venezuela con asesoría en las mejores opciones y
                       precios para el buen manejo de sus cargas.
                     </p>
+                    <!-- Botón para activar el flip -->
+                    <button class="btn-flip">Ver más</button>
                   </div>
                   <!-- Lado posterior-->
-                  <div class="card-back">
-                    <p>
-                      <strong>Más detalles sobre Flete internacional: ...</strong>
-                    </p>
+                  <div class="card-back-flete">
+                    <p><strong>Aéreo, Marítimo y Terrestre</strong></p>
+                    <ul>
+                        <li>Carga FCL (Full Container)</li>
+                        <li>Carga LCL  (less than container load)</li>
+                        <li>Vehículos</li>
+                        <li>Carga Proyecto (Sobredimensionada)</li>
+                    </ul>
+                    <!-- Opcional: botón para volver a la cara frontal -->
+                    <button class="btn-flip">Volver</button>
                   </div>
                 </div>
               </div>
@@ -210,12 +320,18 @@
                       traslado a Puerto Cabello. Tambien el llevado a las intalaciones del cliente
                       donde lo requiere.
                     </p>
+                    <!-- Botón para activar el flip -->
+                    <button class="btn-flip">Ver más</button>
                   </div>
                   <!-- Lado posterior-->
                   <div class="card-back">
                     <p>
-                      <strong>Más detalles sobre Transporte terrestre: ...</strong>
+                      Nuestro equipo especializado realiza un seguimiento
+                      en tiempo real de cada envío, optimiza la ruta para minimizar tiempos y riesgos,
+                      y garantiza que cada traslado cumpla con las normativas y estándares de seguridad.
                     </p>
+                    <!-- Opcional: botón para volver a la cara frontal -->
+                    <button class="btn-flip">Volver</button>
                   </div>
                 </div>
               </div>
@@ -234,14 +350,24 @@
                       Ofrecemos coordinación logistica entendiendo que existen contratos de
                       compra-venta. De igual manera, realizamos toda la coordinación de espacio.
                     </p>
+                    <!-- Botón para activar el flip -->
+                    <button class="btn-flip">Ver más</button>
                   </div>
                   <!-- Lado posterior-->
-                  <div class="card-back">
-                    <p>
-                      <strong>Más detalles sobre la coordinación logistica:</strong> hacemos seguimiento a la
-                      confirmación del Booking, hacemos los Draft BL, cumplimos con los Cut-Off de los mismos
-                      así como el seguimiento del transit time desde el Puerto Salida hasta Puerto de Llegada.
-                    </p>
+                  <div class="card-back-log">
+                    <p><strong>Responsabilidades</strong></p>
+                    <ul>
+                        <li>Planificar, organizar y gestionar el transporte, el almacenamiento y
+                          la distribución.</li>
+                        <li>Coordinar con proveedores, clientes, transportistas, agentes de aduanas,
+                          y otras partes interesadas.</li>
+                        <li>Analizar y optimizar la cadena de suministro y los procesos logísticos.</li>
+                        <li>Negociar y contratar con transportistas y agentes de carga.</li>
+                        <li>Rastrear e informar sobre el estado y el rendimiento de los envíos.</li>
+                        <li>Resolver cualquier problema o retraso que pueda surgir durante el tránsito.</li>
+                    </ul>
+                    <!-- Opcional: botón para volver a la cara frontal -->
+                    <button class="btn-flip">Volver</button>
                   </div>
                 </div>
               </div>
@@ -260,14 +386,18 @@
                     Garantizamos que tus mercancías se almacenan, se manipulen de manera óptima y
                     de la forma más rentable.
                   </p>
+                  <!-- Botón para activar el flip -->
+                  <button class="btn-flip">Ver más</button>
                 </div>
                 <!-- Lado posterior-->
                 <div class="card-back">
                   <p>
-                    <strong>Más detalles sobre almacen logistico:</strong> Tenemos la ubicación adecuada para almacenar
+                    Tenemos la ubicación adecuada para almacenar
                     tus productos en cualquier lugar del mundo y darte las soluciones de almacenaje
                     específicas para tu tipo de sector industrial.
                   </p>
+                  <!-- Opcional: botón para volver a la cara frontal -->
+                  <button class="btn-flip">Volver</button>
                 </div>
               </div>
             </div>
@@ -283,17 +413,24 @@
                     </div>
                     <h3>Asesoría Tecnica</h3>
                     <p>
-                      Contamos con profecionales con amplia
-                      experiencia en materia y caracter laboral en la máxima
-                      autoridad aduanera, garantizando la confianza y seguridad
-                      en el acompañamiento de la operación.
+                      Profesionales expertos en aduanas brindan asesoría confiable y segura en cada operación.
                     </p>
+                    <!-- Botón para activar el flip -->
+                    <button class="btn-flip">Ver más</button>
                   </div>
                   <!-- Lado posterior-->
-                  <div class="card-back">
-                    <p>
-                      <strong>Asesoría Tecnica: ...</strong>
-                    </p>
+                  <div class="card-back-as">
+                    <ul>
+                        <li>Analizamos aranceles, impuestos, costos logísticos y posibles obstáculos aduaneros.</li>
+                        <!-- <li>Proporcionar información clave para la toma de decisiones comerciales estratégicas.</li> -->
+                        <li>Sugerimos clasificación arancelaria y valoración aduanera.</li>
+                        <li>Representar y solucionar discrepancias ante la aduana.</li>
+                        <li>Consultar en materia de importación, exportación, tránsito y regulación aduanera vigente.</li>
+                        <li>Solicitar y tramitar regímenes de liberación, suspensión y otros regímenes aduaneros especiales.</li>
+                        <li>Brindar asesoría técnica y profesional en materia de aduana y comercio exterior.</li>
+                    </ul>
+                    <!-- Opcional: botón para volver a la cara frontal -->
+                    <button class="btn-flip">Volver</button>
                   </div>
                 </div>
               </div>
@@ -313,86 +450,267 @@
         </div>
       </div>
 
+      
+    </section>
+
+    <section class="gallery">
+
+      <div id="news-section">
+        <h2>¡Mantente Informado!</h2>
+        <p id="news-p">
+          Aqui encontraras una variedad de noticia que pueden ser de tu interes
+        </p>
+        <div class="news-cards">
+          <!-- Tarjeta Noticia 1 con fondo personalizado -->
+          <div class="news-card" 
+               data-title="Gaceta oficial N° 43.091" 
+               data-content="Fecha 20/03/2025 en la cual se establece el reglamento técnico de eficiencia energética a las cocinas eléctricas, transformadores, topes de cocina eléctricos y mixtos, además de las lámparas LED."
+               data-pdf="./Image/News/Gaceta oficial 43.091.pdf"
+               style="background-image: url(./Image/News/news-01.jpg);">
+            <div class="news-info">
+              <h3>Gaceta oficial N° 43.091</h3>
+              <p>
+                Ésta gaceta entrará en vigencia a los 6 meses posteriores a su publicación.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Tarjeta Noticia 2 con fondo personalizado -->
+          <div class="news-card" 
+               data-title="Nueva Pagina WEB" 
+               data-content="Visita nuestra nueva página web, diseñada para ofrecerte una experiencia intuitiva y funcional. Descubre secciones actualizadas, conoce a nuestro equipo y accede a contenido exclusivo que te mantendrá informado sobre lo último en innovación."
+               style="background-image: url(./Image/News/news-02.jpg);">
+            <div class="news-info">
+              <h3>Nueva Pagina WEB</h3>
+              <p>
+                Podras mantenerte informado y saber mas sobre nosotros
+              </p>
+            </div>
+          </div>
+          
+          <!-- Tarjeta Noticia 3 con fondo personalizado -->
+          <div class="news-card" 
+               data-title="¡Síguenos en Redes!" 
+               data-content="Conéctate con nosotros en redes sociales para recibir contenido exclusivo, promociones especiales y mantenerte al día con las últimas novedades y tendencias de nuestra marca."
+               style="background-image: url(./Image/News/news-03.jpg);">
+            <div class="news-info">
+              <h3>¡Siguenos!</h3>
+              <p>
+                ¡Ahora puedes seguirnos en nuestras redes sociales!
+              </p>
+            </div>
+          </div>
+          
+          <!-- Tarjeta Noticia 4 con fondo personalizado 
+          <div class="news-card" 
+               data-title="Campaña de Responsabilidad Social" 
+               data-content="Lanzamos una campaña de responsabilidad social con el objetivo de apoyar a las comunidades locales y contribuir al bienestar social. Únete a nosotros en esta iniciativa para construir un futuro mejor."
+               style="background-image: url('imagen-fondo4.jpg');">
+            <div class="news-info">
+              <h3>Campaña Social</h3>
+              <p>Contribuyendo a la comunidad a través de proyectos y acciones responsables.</p>
+            </div>
+          </div>-->
+        </div>
+      </div>
+      
+      <!-- Modal para mostrar más información -->
+      <div id="newsModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <h3 id="modal-title">Título de la noticia</h3>
+          <p id="modal-content">Contenido detallado de la noticia...</p>
+          <!-- Contenedor para el botón de descarga -->
+          <div id="modal-download"></div>
+        </div>
+      </div>
+      
+
+      
+
       <div class="tren" id="treen">
         <div class="container-tren">
           <h2 class="section-title">Tren Ejecutivo</h2>
           <p class="section-comment">
             Embarca en el viaje del éxito: descubre el recorrido de líderes que impulsan la innovación.
           </p>
+          <!-- Radio buttons para controlar el slider -->
           <input type="radio" name="dot" id="one" checked>
           <input type="radio" name="dot" id="two">
-          <!-- Contenedor del slider con dos slides -->
-          <div class="main-card">
-            <!-- Primer slide -->
-            <div class="cards-tren">
-              <div class="card-tren">
-                <div class="content-tren">
-                  <div class="img-tren">
-                    <img src="Image/example1.jpg" alt="Omar E. Villanueva">
+      
+          <!-- Contenedor del slider con flechas y la parte movible -->
+          <div class="slider-wrapper">
+            <!-- Flecha izquierda 
+            <div class="arrow left-arrow">&#10094;</div> -->
+            
+            <!-- Contenedor del slider (200% para dos slides) -->
+            <div class="main-card">
+              <!-- Primer slide -->
+              <div class="cards-tren">
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/example1.jpg" alt="Omar E. Villanueva">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCD. OMAR E. VILLANUEVA</div>
+                      <div class="job-tren">Director Ejecutivo</div>
+                    </div>
                   </div>
-                  <div class="details-tren">
-                    <div class="name-tren">LCD. OMAR E. VILLANUEVA</div>
-                    <div class="job-tren">Director Ejecutivo</div>
+                </div>
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/example1.jpg" alt="Miguel E. Armas">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCDO. MIGUEL E ARMAS</div>
+                      <div class="job-tren">Director Ejecutivo</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/example1.jpg" alt="Arnold J. Cardenas">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCDO. ARNOLD J. CARDENAS</div>
+                      <div class="job-tren">Director Ejecutivo</div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card-tren">
-                <div class="content-tren">
-                  <div class="img-tren">
-                    <img src="Image/example1.jpg" alt="Miguel E. Armas">
-                  </div>
-                  <div class="details-tren">
-                    <div class="name-tren">LCDO. MIGUEL E. ARMAS</div>
-                    <div class="job-tren">Director Ejecutivo</div>
+              <!-- Segundo slide -->
+              <div class="cards-tren">
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/example1.jpg" alt="Irvin Lorven">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCDO. IRVIN LORVEN</div>
+                      <div class="job-tren">Director Ejecutivo</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-tren">
-                <div class="content-tren">
-                  <div class="img-tren">
-                    <img src="Image/example1.jpg" alt="Arnold J. Cardenas">
-                  </div>
-                  <div class="details-tren">
-                    <div class="name-tren">LCDO. ARNOLD J. CARDENAS</div>
-                    <div class="job-tren">Director Ejecutivo</div>
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/example1.jpg" alt="Javier Garcia">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCDO. JAVIER GARCIA</div>
+                      <div class="job-tren">Director de Mercadeo</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Segundo slide -->
-            <div class="cards-tren">
-              <div class="card-tren">
-                <div class="content-tren">
-                  <div class="img-tren">
-                    <img src="Image/example1.jpg" alt="Irvin Lorven">
-                  </div>
-                  <div class="details-tren">
-                    <div class="name-tren">LCDO. IRVIN LORVEN</div>
-                    <div class="job-tren">Director Ejecutivo</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-tren">
-                <div class="content-tren">
-                  <div class="img-tren">
-                    <img src="Image/example1.jpg" alt="Javier Garcia">
-                  </div>
-                  <div class="details-tren">
-                    <div class="name-tren">LCDO. JAVIER GARCIA</div>
-                    <div class="job-tren">Director de Mercadeo</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
+            <!-- Flecha derecha 
+            <div class="arrow right-arrow">&#10095;</div>-->
           </div>
+      
+          <!-- Indicadores de navegación (puntos) -->
           <div class="button-tren">
             <label for="one" class="one"></label>
             <label for="two" class="two"></label>
           </div>
         </div>
-      </div>
+      </div>      
     </section>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Auto transición: si el usuario no interactúa, cambia al segundo slide después de 5 segundos.
+        let autoSlideTimer = setTimeout(function() {
+          document.getElementById('two').checked = true;
+        }, 10000);
+      
+        // Cancelar auto slide si se interactúa con los radio buttons.
+        const radios = document.querySelectorAll('input[name="dot"]');
+        radios.forEach(function(radio) {
+          radio.addEventListener('click', function() {
+            clearTimeout(autoSlideTimer);
+          });
+        });
+      
+        // Manejo de las flechas de navegación:
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+      
+        leftArrow.addEventListener("click", function() {
+          clearTimeout(autoSlideTimer);
+          const radioOne = document.getElementById('one');
+          const radioTwo = document.getElementById('two');
+          // Cambiar de slide: alterna entre el primero y el segundo.
+          if (radioOne.checked) {
+            radioTwo.checked = true;
+          } else {
+            radioOne.checked = true;
+          }
+        });
+      
+        rightArrow.addEventListener("click", function() {
+          clearTimeout(autoSlideTimer);
+          const radioOne = document.getElementById('one');
+          const radioTwo = document.getElementById('two');
+          if (radioOne.checked) {
+            radioTwo.checked = true;
+          } else {
+            radioOne.checked = true;
+          }
+        });
+      });
+      </script>
+    
+    
+      
+    
+
+    <script>
+      // Función para abrir el modal y cargar la información de la tarjeta seleccionada
+      function openNewsModal(element) {
+        const title = element.getAttribute("data-title");
+        const content = element.getAttribute("data-content");
+        const pdfUrl = element.getAttribute("data-pdf"); // Se define la variable pdfUrl
+    
+        document.getElementById("modal-title").innerText = title;
+        document.getElementById("modal-content").innerText = content;
+    
+        // Si existe la URL del PDF, se agrega el botón de descarga.
+        const downloadContainer = document.getElementById("modal-download");
+        if (pdfUrl) {
+          downloadContainer.innerHTML = `<a href="${pdfUrl}" download class="download-button">Descargar PDF</a>`;
+        } else {
+          downloadContainer.innerHTML = "";
+        }
+        
+        // Se activa el modal (solo se llama una vez)
+        document.getElementById("newsModal").classList.add("active");
+      }  
+      
+      // Función para cerrar el modal
+      function closeModal() {
+        document.getElementById("newsModal").classList.remove("active");
+      }
+      
+      // Asignar el evento click a cada tarjeta para abrir el modal
+      document.querySelectorAll(".news-card").forEach(card => {
+        card.addEventListener("click", function() {
+          openNewsModal(this);
+        });
+      });
+      
+      // Cierra el modal si se hace click sobre el área oscurecida
+      window.addEventListener("click", function(event) {
+        const modal = document.getElementById("newsModal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    </script>
     
 
     <section id="testimonials">
@@ -426,30 +744,138 @@
           </div>
         </div>
       </div>
+
+      <!-- Sección del Slideshow -->
+      <div class="slideshow-container">
+        
+        <!-- Diapositiva 1: contiene 4 imágenes -->
+        <div class="mySlides fade">
+          <div class="slide-grid">
+            <img src="./Image/Gallery/IMG-1.jpg" alt="Imagen 1">
+            <img src="./Image/Gallery/IMG-2.jpg" alt="Imagen 2">
+            <img src="./Image/Gallery/IMG-3.jpg" alt="Imagen 3">
+            <img src="./Image/Gallery/IMG-4.jpg" alt="Imagen 4">
+          </div>
+        </div>
+        
+        <!-- Diapositiva 2: otras 4 imágenes -->
+        <div class="mySlides fade">
+          <div class="slide-grid">
+            <img src="./Image/Gallery/IMG-5.jpg" alt="Imagen 5">
+            <img src="./Image/Gallery/IMG-6.jpg" alt="Imagen 6">
+            <img src="./Image/Gallery/IMG-7.jpg" alt="Imagen 7">
+            <img src="./Image/Gallery/IMG-8.jpg" alt="Imagen 8">
+          </div>
+        </div>
+        
+        <!-- Botones para navegación manual 
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a> -->
+      </div>
+
+      <!-- Dots para navegar entre las diapositivas -->
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+      </div>
+
+      <script>
+        let slideIndex = 0;
+        let timer;
+        
+        // Función para mostrar las diapositivas de forma automática
+        function showSlides() {
+          const slides = document.getElementsByClassName("mySlides");
+          const dots = document.getElementsByClassName("dot");
+          
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          
+          slideIndex++;
+          if (slideIndex > slides.length) { slideIndex = 1; }
+          
+          for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+          
+          timer = setTimeout(showSlides, 5000); // Cambia de diapositiva cada 5 segundos
+        }
+        
+        // Reinicia el temporizador al usar controles manuales
+        function resetTimer() {
+          clearTimeout(timer);
+        }
+      
+        // Cambia la diapositiva de forma manual (previo/siguiente)
+        function changeSlide(n) {
+          resetTimer();
+          slideIndex += n - 1; // Ajuste necesario porque showSlides incrementa en 1
+          showManualSlide();
+        }
+        
+        // Navegar a una diapositiva específica usando los dots
+        function currentSlide(n) {
+          resetTimer();
+          slideIndex = n - 1;
+          showManualSlide();
+        }
+        
+        // Mostrar una diapositiva manualmente
+        function showManualSlide() {
+          const slides = document.getElementsByClassName("mySlides");
+          const dots = document.getElementsByClassName("dot");
+          
+          if (slideIndex >= slides.length) { slideIndex = 0; }
+          if (slideIndex < 0) { slideIndex = slides.length - 1; }
+          
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          
+          for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          
+          slides[slideIndex].style.display = "block";
+          dots[slideIndex].className += " active";
+          
+          timer = setTimeout(showSlides, 5000);
+        }
+        
+        // Inicia el slideshow de forma automática
+        showSlides();
+      </script>
+
+
       <div class="logo-scroller">
         <div class="logo-track">
-          <img src="./Image/Logo-Redvital-con-eslogan.png" alt="Logo 1">
-          <img src="./Image/Logo-Produvisa-Disgaven.png" alt="Logo 2">
-          <img src="./Image/peugeot_logo-removebg-preview.png" alt="Logo 3">
-          <img src="./Image/logo-cabel-removebg-preview.png" alt="Logo 4">
-          <img src="./Image/PM-logo-footer.png" alt="Logo 5">
-          <img src="./Image/logo azufrenca.png" alt="Logo 6">
-          <img src="./Image/logo casa fresca.png" alt="Logo 7">
-          <img src="./Image/logo cde.png" alt="Logo 8">
-          <img src="./Image/logo guarani.png" alt="Logo 9">
-          <img src="./Image/logo plasticos.png" alt="Logo 10">
-          <img src="./Image/logo unidas.png" alt="Logo 11">
-          <img src="./Image/Logo-Redvital-con-eslogan.png" alt="Logo 1 duplicado"> <!-- Duplicado para efecto continuo -->
-          <img src="./Image/Logo-Produvisa-Disgaven.png" alt="Logo 2 duplicado">
-          <img src="./Image/peugeot_logo-removebg-preview.png" alt="Logo 3 duplicado">
-          <img src="./Image/logo-cabel-removebg-preview.png" alt="Logo 4 duplicado">
-          <img src="./Image/PM-logo-footer.png" alt="Logo 5 duplicado">
-          <img src="./Image/logo azufrenca.png" alt="Logo 6 duplicado">
-          <img src="./Image/logo casa fresca.png" alt="Logo 7 duplicado">
-          <img src="./Image/logo cde.png" alt="Logo 8 duplicado">
-          <img src="./Image/logo guarani.png" alt="Logo 9 duplicado">
-          <img src="./Image/logo plasticos.png" alt="Logo 10 duplicado">
-          <img src="./Image/logo unidas.png" alt="Logo 11 duplicado">
+          <img src="./Image/Clientes/Logo Redvital.png" alt="Logo 1">
+          <img src="./Image/Clientes/logo mazda.png" alt="Logo 2">
+          <img src="./Image/Clientes/logo peugeot.png" alt="Logo 3">
+          <img src="./Image/Clientes/logo cabel.png" alt="Logo 4">
+          <img src="./Image/Clientes/logo glassvenca.png" alt="Logo 5">
+          <img src="./Image/Clientes/logo azufrenca.png" alt="Logo 6">
+          <img src="./Image/Clientes/logo masia.png" alt="Logo 7">
+          <img src="./Image/Clientes/logo cde.png" alt="Logo 8">
+          <img src="./Image/Clientes/logo guarani.png" alt="Logo 9">
+          <img src="./Image/Clientes/logo plasticos.png" alt="Logo 10">
+          <img src="./Image/Clientes/logo unidas.png" alt="Logo 11">
+          <img src="./Image/Clientes/logo lecomp.png" alt="Logo 12">
+          <img src="./Image/Clientes/Logo Redvital.png" alt="Logo 1 duplicado"> <!-- Duplicado para efecto continuo -->
+          <img src="./Image/Clientes/Logo Produvisa.png" alt="Logo 2 duplicado">
+          <img src="./Image/Clientes/logo peugeot.png" alt="Logo 3 duplicado">
+          <img src="./Image/Clientes/logo mazda.png" alt="Logo 4 duplicado">
+          <img src="./Image/Clientes/logo pemco.png" alt="Logo 5 duplicado">
+          <img src="./Image/Clientes/logo AJEVEN.png" alt="Logo 6 duplicado">
+          <img src="./Image/Clientes/logo casa fresca.png" alt="Logo 7 duplicado">
+          <img src="./Image/Clientes/logo astom.png" alt="Logo 8 duplicado">
+          <img src="./Image/Clientes/logo guarani.png" alt="Logo 9 duplicado">
+          <img src="./Image/Clientes/logo plasticos el griego.png" alt="Logo 10 duplicado">
+          <img src="./Image/Clientes/logo revinca.png" alt="Logo 11 duplicado">
         </div>
       </div>
     </section>
