@@ -44,7 +44,7 @@ header {
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
-  color: gray;
+  /* color: gray; */
   padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
@@ -118,7 +118,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #f39c12;
+  color: #dbe260;
 }
 
 /* Botón de menú hamburguesa */
@@ -456,6 +456,9 @@ nav ul li a:hover {
 /* Estilos para la sección About */
 /* Estilos para la sección About */
 /* Estilos para la sección About */
+/* Estilos para la sección About */
+/* Estilos para la sección About */
+/* Estilos para la sección About */
 
 
 /* Sección Quiénes Somos */
@@ -504,14 +507,14 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 80px;  /* Espacio entre elementos */
+  gap: 0px;  /* Espacio entre elementos */
 }
 
 /* Cada elemento de la lista */
 .about-item {
   background-color: transparent;  /* Sin fondo para mantener el diseño limpio */
   padding: 20px;
-  width: 400px;
+  width: 330px;
   text-align: left;  /* Alinear el texto hacia la izquierda para una lectura cómoda */
 }
 
@@ -530,7 +533,7 @@ nav ul li a:hover {
 /* Estilos para el párrafo dentro de cada elemento */
 .about-text p {
   font-size: 20px;    /* Aumenta el tamaño de la fuente para una lectura más cómoda */
-  line-height: 1.6;
+  line-height: 1.4;
   color: #f4f4f4;
 }
 
@@ -577,7 +580,72 @@ nav ul li a:hover {
   color: #555;
 }
 
-/* Adaptabilidad: en móviles, los bloques se apilan */
+/* QUESTIONS QUESTIONS */
+
+.questions {
+  text-align: center;
+}
+
+.questions_container {
+  display: grid;
+  gap: 2em;
+  padding: 50px 0 100px;
+  max-width: 1000px;
+  margin: 0 auto; /* Esto centra el contenedor horizontalmente */
+}
+
+
+.questions_padding {
+  padding: 0;
+  transition: padding 0.3s;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.questions_answer {
+  padding: 0 30px;
+  overflow: hidden; /* Importante para la transición de altura */
+}
+
+.questions_title {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding: 30px 0;
+  cursor: pointer;
+  color: var(--color-title);
+  justify-content: space-between;
+}
+
+.questions_arrow {
+  border-radius: 50%;
+  background-color: #6dbccb;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+/* Clase que rota la flecha */
+.questions_arrow--rotate {
+  transform: rotate(180deg);
+}
+
+.questions_show {
+  font-size: 20px;
+  text-align: left;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+  /* margin-bottom no se transiciona, por lo cual el espacio se mantendrá cuando se expanda */
+  margin-bottom: 20px;  /* Ajusta el valor según lo necesites */
+}
+
+
+/* Media Queries para adaptabilidad */
 @media (max-width: 768px) {
   .about-info {
     flex-direction: column;
@@ -772,6 +840,10 @@ header.major {
   transform: rotateY(180deg);    /* Aplica el giro al reverso */
 }
 
+.card h3 {
+  margin-top: -15px;
+}
+
 .card-front,
 .card-back {
   position: absolute;
@@ -785,11 +857,160 @@ header.major {
   transform: rotateY(180deg);    /* Invierte la cara trasera */
   /* background-color: rgba(0, 0, 0, 0.7); /* Color de fondo para el reverso, ajústalo si lo deseas */
   color: rgba(255, 255, 255, 0.9);      /* Color del texto en el reverso */
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   padding: 15px;
 }
+
+.card-back ul {
+  list-style: circle; /* Elimina las viñetas */
+  padding-left: 0;
+  font-size: 1rem;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: -130px;
+  line-height: 1.2;
+}
+
+.card-back p {
+  margin-bottom: 10px; /* Espacio entre el párrafo y la lista */
+  font-size: 1.2rem;
+  margin-top: -40px;
+}
+
+.card-back ul li {
+  margin-bottom: 5px;  /* Espacio entre cada elemento de lista */
+}
+
+.card-front,
+.card-back-flete {
+  position: absolute;
+  width: 100%;
+  height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
+  backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
+  box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+}
+
+.card-back-flete {
+  transform: rotateY(180deg);    /* Invierte la cara trasera */
+  /* background-color: rgba(0, 0, 0, 0.7); /* Color de fondo para el reverso, ajústalo si lo deseas */
+  color: rgba(255, 255, 255, 0.9);      /* Color del texto en el reverso */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.card-back-flete ul {
+  list-style: circle; /* Elimina las viñetas */
+  padding-left: 0;
+  font-size: 1rem;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: -130px;
+}
+
+.card-back-flete p {
+  margin-bottom: -100px; /* Espacio entre el párrafo y la lista */
+  font-size: 1.2rem;
+  margin-top: -100px;
+}
+
+.card-back-flete ul li {
+  margin-bottom: 5px;  /* Espacio entre cada elemento de lista */
+}
+
+.card-front,
+.card-back-log {
+  position: absolute;
+  width: 100%;
+  height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
+  backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
+  box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+}
+
+.card-back-log {
+  transform: rotateY(180deg);    /* Invierte la cara trasera */
+  /* background-color: rgba(0, 0, 0, 0.7); /* Color de fondo para el reverso, ajústalo si lo deseas */
+  color: rgba(255, 255, 255, 0.9);      /* Color del texto en el reverso */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.card-back-log ul {
+  list-style: circle; /* Elimina las viñetas */
+  padding-left: 0;
+  font-size: 0.7rem;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: -150px;
+}
+
+.card-back-log p {
+  margin-top: -80px; /* Espacio entre el párrafo y la lista */
+  font-size: 1.2rem;
+}
+
+.card-back-log ul li {
+  margin-bottom: 1px;  /* Espacio entre cada elemento de lista */
+}
+
+.card-front,
+.card-back-as {
+  position: absolute;
+  width: 100%;
+  height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
+  backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
+  box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+}
+
+.card-back-as {
+  transform: rotateY(180deg);    /* Invierte la cara trasera */
+  /* background-color: rgba(0, 0, 0, 0.7); /* Color de fondo para el reverso, ajústalo si lo deseas */
+  color: rgba(255, 255, 255, 0.9);      /* Color del texto en el reverso */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.card-back-as ul {
+  list-style: circle; /* Elimina las viñetas */
+  padding-left: 0;
+  font-size: 0.8rem;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 20px;
+  margin-top: -50px;
+}
+
+.card-back-as ul li {
+  margin-bottom: 1px;  /* Espacio entre cada elemento de lista */
+}
+
+.btn-flip {
+  position: absolute;           /* Posicionar de forma absoluta */
+  left: 50%;                    /* Centrar horizontalmente */
+  bottom: 15px;                 /* Espaciado desde la parte inferior */
+  transform: translateX(-50%);  /* Ajuste para centrar exacto */
+  border: 2px solid white;      /* Borde blanco */
+  background: transparent;      /* Fondo transparente */
+  color: white;                 /* Texto en blanco */
+  padding: 0.5rem 1.5rem;        /* Relleno interno */
+  border-radius: 5px;           /* Bordes redondeados (opcional) */
+  cursor: pointer;              /* Indicador de clic */
+  z-index: 10;                  /* Para asegurarnos de que esté por encima */
+  font-size: 1rem;              /* Tamaño de fuente */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-flip:hover {
+  background-color: rgba(255, 255, 255, 0.2);  /* Efecto hover: fondo levemente blanco */
+}
+
 
 
 
@@ -863,6 +1084,22 @@ header.major:after {
   }
 }
 
+.mapa {
+  text-align: center; /* Centra el texto dentro del contenedor */
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 25px;
+  margin-bottom: -100px;
+}
+
+.map img {
+  width: 100%; /* Hace que la imagen se ajuste al contenedor */
+  max-width: 1000px; /* Limita el tamaño máximo para evitar que la imagen sea demasiado grande */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  display: block; /* Asegura que la imagen se comporte como un elemento bloque dentro del contenedor */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  border-radius: 8px; /* Opcional: añade bordes redondeados para un diseño más moderno */
+}
 
 
 
@@ -946,34 +1183,186 @@ header.major:after {
 }
 
 
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/*tren ejecutivo*/
-/* Se usa .tren ya que en tu HTML la sección tiene la clase "tren" */
 
-.mapa {
-  text-align: center; /* Centra el texto dentro del contenedor */
-  margin: 0 auto;
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+/*tren ejecutivo*/
+
+/* Contenedor de tarjetas de noticias */
+.news-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+}/* Sección de Noticias */
+#news-section {
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 20px;
-  margin-top: 25px;
-  margin-bottom: -100px;
+}
+#news-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: white;
 }
 
-.map img {
-  width: 100%; /* Hace que la imagen se ajuste al contenedor */
-  max-width: 1000px; /* Limita el tamaño máximo para evitar que la imagen sea demasiado grande */
-  height: auto; /* Mantiene las proporciones de la imagen */
-  display: block; /* Asegura que la imagen se comporte como un elemento bloque dentro del contenedor */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
-  border-radius: 8px; /* Opcional: añade bordes redondeados para un diseño más moderno */
+#news-p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.8); /* Texto más suave */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #ddd;
+  margin-bottom: 60px;
 }
+
+
+.news-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Tarjeta de Noticia sin fondo predeterminado, se asigna de forma individual */
+.news-card {
+  max-width: 280px;
+  max-height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay para oscurecer el fondo y mejorar la legibilidad */
+.news-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 0;
+}
+
+
+/* Contenedor del texto, posicionado sobre la tarjeta y desplazado hacia abajo */
+.news-info {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  margin-top: 100px; /* Ajusta este valor según tu preferencia */
+  color: #fff;
+}
+.news-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+  text-align: left;
+  margin-left: -10px;
+}
+.news-info p {
+  font-size: 0.9em;
+  margin-top: -5px;
+  line-height: 1.1;
+  text-align: left;
+  margin-left: -10px;
+}
+
+/* Estilos del Modal para desplegar más información (se mantiene igual) */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.active {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+.modal-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close-modal:hover {
+  color: #000;
+}
+
+/* Estilo para el botón de descarga */
+.download-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
 
 
 .tren {
@@ -985,6 +1374,7 @@ header.major:after {
   margin-bottom: -20px;
 }
 
+/* Estilos para título y comentario */
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #fff;
@@ -999,19 +1389,26 @@ header.major:after {
   margin-bottom: 20px;
 }
 
+/* Container principal de la sección "Tren Ejecutivo" */
 .container-tren {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
   padding: 30px 0;
-  /* display: flex;*/
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-
+/* Contenedor que agrupa el slider y las flechas */
+.slider-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
 /* Contenedor del slider (200% para dos slides) */
 .main-card {
@@ -1020,22 +1417,22 @@ header.major:after {
   transition: all 1s ease;
 }
 
-/* Al seleccionar el radio #two, se mueve el slider */
-#two:checked ~ .main-card {
+/* Al seleccionar el radio #two, se desplaza el slider */
+#two:checked ~ .slider-wrapper .main-card {
   margin-left: -100%;
 }
 
-/* Cada slide ocupa 50% de .main-card */
+/* Cada slide ocupa 50% del slider */
 .cards-tren {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Centra las tarjetas dentro del slide */
-  gap: 20px;  /* Espacio uniforme entre tarjetas */
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
 
-/* Tarjetas con forma cuadrada y estética */
+/* Tarjetas cuadradas */
 .card-tren {
   background: #fff;
   width: 250px;
@@ -1045,7 +1442,7 @@ header.major:after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenido interno de la tarjeta */
@@ -1057,8 +1454,8 @@ header.major:after {
 }
 
 .img-tren {
-  height: 130px;
   width: 130px;
+  height: 130px;
   margin-bottom: 14px;
   background: #dbe260;
   padding: 3px;
@@ -1067,13 +1464,13 @@ header.major:after {
 }
 
 .img-tren img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #fff;
 }
-/* Detalles de texto */
+
 .details-tren .name-tren {
   font-size: 16px;
   font-weight: 600;
@@ -1088,7 +1485,7 @@ header.major:after {
   text-align: center;
 }
 
-/* Botones del slider */
+/* Botones de navegación (puntos) */
 .button-tren {
   display: flex;
   margin: 20px;
@@ -1102,6 +1499,7 @@ header.major:after {
   margin: 0 4px;
   border-radius: 20px;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 /* Indicadores activos */
@@ -1110,10 +1508,38 @@ header.major:after {
   width: 35px;
 }
 
-/* Inactivos */
+/* Indicadores inactivos */
 #one:checked ~ .button-tren label.two,
 #two:checked ~ .button-tren label.one {
   width: 15px;
+}
+
+/* Flechas de navegación, posicionadas dentro de slider-wrapper */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  transition: background 0.3s;
+}
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.left-arrow {
+  left: 10px;  /* a 10px desde el borde izquierdo del slider-wrapper */
+}
+.right-arrow {
+  right: 10px; /* a 10px desde el borde derecho */
 }
 
 /* Ocultar los radio buttons */
@@ -1121,21 +1547,33 @@ input[type="radio"] {
   display: none;
 }
 
-/* Media Queries para responsive */
-
-/* Para pantallas medianas: mostrar 2 tarjetas por fila */
+/* Responsividad de flechas y tarjetas */
 @media (max-width: 768px) {
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    line-height: 40px;
+  }
+  .left-arrow {
+    left: 5px;
+  }
+  .right-arrow {
+    right: 5px;
+  }
+  
   .card-tren {
     width: calc(100% / 2 - 20px);
+    height: auto;
   }
 }
 
-/* Para pantallas pequeñas: una tarjeta por fila */
 @media (max-width: 600px) {
   .card-tren {
     width: 100%;
   }
 }
+
 
 
 
@@ -1310,6 +1748,113 @@ input[type="radio"] {
   }
 }
 
+
+
+.gallery {
+  background: url(../Image/banner03.jpg) no-repeat center center/cover;
+  color: #ffffff; /* Texto blanco */
+  padding: 60px 20px; /* Espaciado interno */
+  text-align: center; /* Centra el contenido */
+  padding-top: 0px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  border-top: 3px solid #dbe260;
+}
+
+
+/* Contenedor principal del slideshow */
+/* Contenedor del slideshow */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+/* Cada diapositiva */
+.mySlides {
+  display: none;
+}
+
+/* Efecto fade para cada diapositiva */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Grid para colocar 4 imágenes por diapositiva */
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Estilo para cada imagen, con dimensiones fijas */
+.slide-grid img {
+  width: 100%;
+  height: 200px;   /* Ajusta la altura segun tus necesidades */
+  object-fit: cover;  /* Mantiene la imagen centrada y recorta si es necesario */
+  border-radius: 8px;
+}
+
+/* Botones para avanzar y retroceder */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  transform: translateY(-50%);
+  user-select: none;
+  transition: background-color 0.6s ease;
+  text-decoration: none;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots o puntos de navegación */
+.dot-container {
+  text-align: center;
+  padding: 10px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Ejemplo de media query para dispositivos pequeños */
+@media (max-width: 768px) {
+  .slide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
 
