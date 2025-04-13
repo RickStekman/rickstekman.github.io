@@ -134,15 +134,18 @@ function openTab(evt, tabId) {
 
 
 // animacion de la carta
+// Listener para los botones de flip
+const flipButtons = document.querySelectorAll('.btn-flip');
 
-const cards = document.querySelectorAll('.card-container');
-
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const innerCard = card.querySelector('.card');
-    innerCard.classList.toggle('is-flipped');
+flipButtons.forEach(btn => {
+  btn.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevenir que el clic se propague a otros elementos
+    const card = btn.closest('.card'); // Encuentra la tarjeta contenedora más cercana
+    card.classList.toggle('is-flipped'); // Alterna la clase de giro
   });
 });
+
+
 
 
 // contacto
@@ -180,20 +183,46 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 
 
 
-
-
 //tren ejecutivo
-// Timer para el auto slide (5 segundos)
+
+// Auto transición: si el usuario no interactúa, se cambia al segundo slide después de 5 segundos.
 let autoSlideTimer = setTimeout(() => {
   document.getElementById('two').checked = true;
 }, 5000);
 
-// Si el usuario interactúa (click en cualquier radio) se cancela la transición automática
+// Si hay interacción con los radio buttons se cancela el auto slide.
 const radios = document.querySelectorAll('input[name="dot"]');
 radios.forEach(radio => {
   radio.addEventListener('click', () => {
     clearTimeout(autoSlideTimer);
   });
+});
+
+// Manejo de las flechas de navegación.
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+
+leftArrow.addEventListener("click", function() {
+  clearTimeout(autoSlideTimer);
+  const radioOne = document.getElementById('one');
+  const radioTwo = document.getElementById('two');
+  // Si se está mostrando el primer slide, pasa al segundo; de lo contrario, vuelve al primero.
+  if (radioOne.checked) {
+    radioTwo.checked = true;
+  } else {
+    radioOne.checked = true;
+  }
+});
+
+rightArrow.addEventListener("click", function() {
+  clearTimeout(autoSlideTimer);
+  const radioOne = document.getElementById('one');
+  const radioTwo = document.getElementById('two');
+  if (radioOne.checked) {
+    radioTwo.checked = true;
+  } else {
+    radioOne.checked = true;
+  }
 });
 
 
