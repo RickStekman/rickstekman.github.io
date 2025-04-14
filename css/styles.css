@@ -485,7 +485,7 @@ nav ul li a:hover {
 }
 
 .s-about .text-display-title {
-  font-size: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.7rem, 2vw, 1rem);
   line-height: 1;
   font-weight: 100;
   color: #ddd;
