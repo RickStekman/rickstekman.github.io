@@ -458,10 +458,24 @@
       <div id="news-section">
         <h2>¡Mantente Informado!</h2>
         <p id="news-p">
-          Aqui encontraras una variedad de noticia que pueden ser de tu interes
+          Aqui encontraras una variedad de noticia que pueden ser de tu interes.
         </p>
         <div class="news-cards">
           <!-- Tarjeta Noticia 1 con fondo personalizado -->
+          <div class="news-card" 
+               data-title="Gaceta oficial N° 42.439" 
+               data-content="Fecha 14/04/2025 en la cual se establece que se elimina la exigencia de fuentes móviles para vehículos importados."
+               data-pdf="./Image/News/Gaceta oficial 42.439.pdf"
+               style="background-image: url(./Image/News/news-01.jpg);">
+            <div class="news-info">
+              <h3>Gaceta oficial N° 42.439</h3>
+              <p>
+                Ésta gaceta entrará en vigencia a los 6 meses posteriores a su publicación.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Tarjeta Noticia 2 con fondo personalizado -->
           <div class="news-card" 
                data-title="Gaceta oficial N° 43.091" 
                data-content="Fecha 20/03/2025 en la cual se establece el reglamento técnico de eficiencia energética a las cocinas eléctricas, transformadores, topes de cocina eléctricos y mixtos, además de las lámparas LED."
@@ -471,19 +485,6 @@
               <h3>Gaceta oficial N° 43.091</h3>
               <p>
                 Ésta gaceta entrará en vigencia a los 6 meses posteriores a su publicación.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Tarjeta Noticia 2 con fondo personalizado -->
-          <div class="news-card" 
-               data-title="Nueva Pagina WEB" 
-               data-content="Visita nuestra nueva página web, diseñada para ofrecerte una experiencia intuitiva y funcional. Conoce a nuestro equipo y accede a contenido exclusivo que te mantendrá informado."
-               style="background-image: url(./Image/News/news-02.jpg);">
-            <div class="news-info">
-              <h3>Nueva Pagina WEB</h3>
-              <p>
-                Podras mantenerte informado y saber mas sobre nosotros.
               </p>
             </div>
           </div>
@@ -500,17 +501,7 @@
               </p>
             </div>
           </div>
-          
-          <!-- Tarjeta Noticia 4 con fondo personalizado 
-          <div class="news-card" 
-               data-title="Campaña de Responsabilidad Social" 
-               data-content="Lanzamos una campaña de responsabilidad social con el objetivo de apoyar a las comunidades locales y contribuir al bienestar social. Únete a nosotros en esta iniciativa para construir un futuro mejor."
-               style="background-image: url('imagen-fondo4.jpg');">
-            <div class="news-info">
-              <h3>Campaña Social</h3>
-              <p>Contribuyendo a la comunidad a través de proyectos y acciones responsables.</p>
-            </div>
-          </div>-->
+        
         </div>
       </div>
       
@@ -550,7 +541,7 @@
                 <div class="card-tren">
                   <div class="content-tren">
                     <div class="img-tren">
-                      <img src="Image/example1.jpg" alt="Omar E. Villanueva">
+                      <img src="Image/tren1.jpg" alt="Omar E. Villanueva">
                     </div>
                     <div class="details-tren">
                       <div class="name-tren">LCD. OMAR E. VILLANUEVA</div>
@@ -561,18 +552,7 @@
                 <div class="card-tren">
                   <div class="content-tren">
                     <div class="img-tren">
-                      <img src="Image/example1.jpg" alt="Miguel E. Armas">
-                    </div>
-                    <div class="details-tren">
-                      <div class="name-tren">LCDO. MIGUEL E ARMAS</div>
-                      <div class="job-tren">Director Ejecutivo</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-tren">
-                  <div class="content-tren">
-                    <div class="img-tren">
-                      <img src="Image/example1.jpg" alt="Arnold J. Cardenas">
+                      <img src="Image/tren2.jpg" alt="Miguel E. Armas">
                     </div>
                     <div class="details-tren">
                       <div class="name-tren">LCDO. ARNOLD J. CARDENAS</div>
@@ -580,13 +560,24 @@
                     </div>
                   </div>
                 </div>
+                <div class="card-tren">
+                  <div class="content-tren">
+                    <div class="img-tren">
+                      <img src="Image/tren3.jpg" alt="Arnold J. Cardenas">
+                    </div>
+                    <div class="details-tren">
+                      <div class="name-tren">LCDO. MIGUEL E ARMAS</div>
+                      <div class="job-tren">Director Ejecutivo</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <!-- Segundo slide -->
+              <!-- Segundo slide 
               <div class="cards-tren">
                 <div class="card-tren">
                   <div class="content-tren">
                     <div class="img-tren">
-                      <img src="Image/example1.jpg" alt="Irvin Lorven">
+                      <img src="Image/tren3.jpg" alt="Irvin Lorven">
                     </div>
                     <div class="details-tren">
                       <div class="name-tren">LCDO. IRVIN LORVEN</div>
@@ -606,22 +597,22 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             
             <!-- Flecha derecha 
             <div class="arrow right-arrow">&#10095;</div>-->
           </div>
       
-          <!-- Indicadores de navegación (puntos) -->
+          <!-- Indicadores de navegación (puntos) 
           <div class="button-tren">
             <label for="one" class="one"></label>
-            <label for="two" class="two"></label>
+            <label for="two" class="two"></label>-->
           </div>
         </div>
       </div>      
     </section>
 
-    <script>
+    <!--<script>
       document.addEventListener("DOMContentLoaded", function() {
         // Auto transición: si el usuario no interactúa, cambia al segundo slide después de 5 segundos.
         let autoSlideTimer = setTimeout(function() {
@@ -663,7 +654,7 @@
           }
         });
       });
-      </script>
+      </script>-->
     
     
       
