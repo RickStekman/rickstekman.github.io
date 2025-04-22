@@ -1131,6 +1131,8 @@ header.major:after {
   display: block; /* Asegura que la imagen se comporte como un elemento bloque dentro del contenedor */
   margin: 0 auto; /* Centra la imagen horizontalmente */
   border-radius: 8px; /* Opcional: añade bordes redondeados para un diseño más moderno */
+  padding-bottom: 40px;
+  margin-top: -40px;
 }
 
 
@@ -1597,6 +1599,8 @@ input[type="radio"] {
   .card-tren {
     width: calc(100% / 2 - 20px);
     height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
