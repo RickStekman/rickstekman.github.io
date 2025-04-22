@@ -732,6 +732,10 @@ header.major {
   grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Máximo de 3 columnas */
   gap: 10px; /* Espaciado entre elementos */
   justify-content: center; /* Centra el contenido horizontalmente */
+  /* Si usas un contenedor grid, asegúrate de preservar el contexto 3D */
+#three .box.alt .row {
+  transform-style: preserve-3d;
+}
 }
 
 /* Secciones individuales */
@@ -834,6 +838,10 @@ header.major {
   position: relative;
   transform-style: preserve-3d;  /* Mantiene el efecto 3D en los hijos */
   transition: transform 0.6s ease; /* Animación fluida */
+  -webkit-transform-style: preserve-3d; /* Prefijo para Safari */
+  transform-style: preserve-3d;
+  -webkit-transition: transform 0.6s ease;
+  transition: transform 0.6s ease;
 }
 
 .card.is-flipped {
@@ -851,6 +859,10 @@ header.major {
   height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
   backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
   box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+  -webkit-backface-visibility: hidden; /* Prefijo para Safari */
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  transform: translateZ(0);
 }
 
 .card-back {
@@ -861,6 +873,8 @@ header.major {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  -webkit-transform: rotateY(180deg); /* Prefijo para Safari */
+  transform: rotateY(180deg);
 }
 
 .card-back ul {
@@ -890,6 +904,10 @@ header.major {
   height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
   backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
   box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+  -webkit-backface-visibility: hidden; /* Para Safari */
+  will-change: transform, opacity;
+  /* Forzamos la aceleración por hardware */
+  transform: translateZ(0);
 }
 
 .card-back-flete {
@@ -900,6 +918,8 @@ header.major {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card-back-flete ul {
@@ -928,6 +948,10 @@ header.major {
   height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
   backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
   box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+  -webkit-backface-visibility: hidden; /* Para Safari */
+  will-change: transform, opacity;
+  /* Forzamos la aceleración por hardware */
+  transform: translateZ(0);
 }
 
 .card-back-log {
@@ -938,6 +962,8 @@ header.major {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card-back-log ul {
@@ -965,6 +991,10 @@ header.major {
   height: 100%;                  /* Asegura que ambos lados ocupen toda la altura */
   backface-visibility: hidden;   /* Oculta la cara trasera cuando no se ve */
   box-sizing: border-box;        /* Asegura que el padding no altere el tamaño total */
+  -webkit-backface-visibility: hidden; /* Para Safari */
+  will-change: transform, opacity;
+  /* Forzamos la aceleración por hardware */
+  transform: translateZ(0);
 }
 
 .card-back-as {
@@ -975,6 +1005,8 @@ header.major {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card-back-as ul {
